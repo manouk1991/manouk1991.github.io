@@ -1,0 +1,25 @@
+# Mijn medische website
+
+Welkom! Dit is mijn eerste gratis website.
+
+---
+
+## Hyponatriëmie
+
+### Diagnostiek
+<details>
+<summary>Klik om te openen</summary>
+
+- Serum natrium
+- Serum osmolaliteit
+- Urine natrium
+
+</details>
+
+### Overzicht
+
+| Type | Serum osmolaliteit | Oorzaak |
+|------|------------------|---------|
+| Hypotoon | Laag | SIADH |
+| Isotoon | Normaal | Pseudohyponatriëmie |
+| Hypertoon | Hoog | Hyperglykemie |
