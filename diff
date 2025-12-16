@@ -1,25 +1,12 @@
-# Mijn medische website
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+  <meta charset="UTF-8">
+  <title>Mijn eerste GitHub Page</title>
+</head>
+<body>
+  <h1>Hallo wereld 👋</h1>
+  <p>Deze website draait op GitHub Pages.</p>
+</body>
+</html>
 
-Welkom! Dit is mijn eerste gratis website.
-
----
-
-## Hyponatriëmie
-
-### Diagnostiek
-<details>
-<summary>Klik om te openen</summary>
-
-- Serum natrium
-- Serum osmolaliteit
-- Urine natrium
-
-</details>
-
-### Overzicht
-
-| Type | Serum osmolaliteit | Oorzaak |
-|------|------------------|---------|
-| Hypotoon | Laag | SIADH |
-| Isotoon | Normaal | Pseudohyponatriëmie |
-| Hypertoon | Hoog | Hyperglykemie |
