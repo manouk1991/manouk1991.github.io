@@ -3,43 +3,70 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Labhulp</title>
+  <title>Labhulp - Assistent</title>
   <style>
-    body { font-family: Arial, sans-serif; margin: 0; padding: 0; }
-    header, footer { background: #f5f5f5; padding: 1rem; }
-    h1 { margin: 0.5rem; }
-    .buttons { margin: 1rem 0; }
-    .buttons button { margin: 0.2rem; padding: 0.6rem 1rem; }
-    .content { padding: 1rem; }
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 1rem;
+      line-height: 1.4;
+    }
+    h1, h2 {
+      color: #004080;
+    }
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-bottom: 2rem;
+      overflow-x: auto;
+      display: block;
+    }
+    th, td {
+      border: 1px solid #ccc;
+      padding: 0.5rem;
+      text-align: left;
+      vertical-align: top;
+    }
+    th {
+      background-color: #cce5ff;
+    }
+    tr:nth-child(even) {
+      background-color: #f9f9f9;
+    }
+    .section {
+      margin-bottom: 2rem;
+    }
   </style>
 </head>
 <body>
 
-<header>
-  <h1>Labhulp</h1>
-  <div class="buttons">
-    <button>Doktersassistent</button>
-    <button>Huisarts</button>
-    <button>Specialist</button>
-    <button>Alles</button>
-  </div>
-</header>
+<h1>Labhulp - Doktersassistent</h1>
 
-<section class="content">
-  <h2>Wanneer moet ik iets?</h2>
-  <p>Je kunt de tabel aanpassen aan je rol …</p>
-</section>
+<div class="section" id="hb">
+  <h2>Hb</h2>
+  <table>
+    <tr>
+      <th>Stap 1: Wanneer moet de arts er vandaag naar kijken?</th>
+      <th>Stap 2: Welke vragen te stellen?</th>
+      <th>Stap 3: Welk aanvullend onderzoek is nodig?</th>
+      <th>Stap 4: Wat is het beleid?</th>
+    </tr>
+    <tr>
+      <td>Spoed indien Hb &lt;6 mmol/L</td>
+      <td>
+        <strong>Vrouwen:</strong> Is er een hevige menstruatie (scorekaart)?<br>
+        <strong>Kinderen:</strong> Voorgaande maand een infectie gehad?<br>
+        Overig:<br>
+        - Vegetariër?<br>
+        - Recent ziekenhuisingreep?<br>
+        - Veranderd ontlastingspatroon?<br>
+        - Buikpijn?<br>
+        - Gewichtsverlies?<br>
+        - Bloed/zwart braaksel? Dan spoedoverleg.
+      </td>
+      <td>
+        Minstens nodig:<br>
+        - MCV<br>
 
-<section class="content">
-  <h2>Laboratoriumwaarden</h2>
-  <p>Hier komt de uitleg van de labwaarden.</p>
-</section>
-
-<footer>
-  <p>Gebaseerd op informatie van richtlijnen.</p>
-</footer>
-
-</body>
-</html>
 
 
