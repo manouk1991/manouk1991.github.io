@@ -67,6 +67,7 @@
       padding: 0.5rem;
       text-align: left;
       vertical-align: top;
+      cursor: pointer;
     }
     th {
       background: #cce5ff;
@@ -99,12 +100,12 @@
 <!-- Hb Sectie -->
 <div class="section" id="hb">
   <h2>Hb</h2>
-  <table>
+  <table id="hb-table" data-sort-dir="">
     <tr>
-      <th>Stap 1: Wanneer moet de arts er vandaag naar kijken?</th>
-      <th>Stap 2: Welke vragen te stellen?</th>
-      <th>Stap 3: Welk aanvullend onderzoek is nodig?</th>
-      <th>Stap 4: Wat is het beleid?</th>
+      <th onclick="sortTable('hb-table',0)">Stap 1: Wanneer moet de arts er vandaag naar kijken?</th>
+      <th onclick="sortTable('hb-table',1)">Stap 2: Welke vragen te stellen?</th>
+      <th onclick="sortTable('hb-table',2)">Stap 3: Welk aanvullend onderzoek is nodig?</th>
+      <th onclick="sortTable('hb-table',3)">Stap 4: Wat is het beleid?</th>
     </tr>
     <tr>
       <td>Spoed indien Hb &lt;6 mmol/L</td>
@@ -157,12 +158,12 @@
 <!-- Trombocyten Sectie -->
 <div class="section" id="trombocyten">
   <h2>Trombocyten</h2>
-  <table>
+  <table id="trombocyten-table" data-sort-dir="">
     <tr>
-      <th>Stap 1</th>
-      <th>Stap 2</th>
-      <th>Stap 3</th>
-      <th>Stap 4</th>
+      <th onclick="sortTable('trombocyten-table',0)">Stap 1</th>
+      <th onclick="sortTable('trombocyten-table',1)">Stap 2</th>
+      <th onclick="sortTable('trombocyten-table',2)">Stap 3</th>
+      <th onclick="sortTable('trombocyten-table',3)">Stap 4</th>
     </tr>
     <tr>
       <td>Spoed indien Trombo's &lt;50 x10⁹/L</td>
@@ -190,10 +191,27 @@
   </table>
 </div>
 
-<!-- Je kunt op dezelfde manier andere tabellen toevoegen -->
+<script>
+// Functie om een tabel alfabetisch te sorteren op een kolom
+function sortTable(tableId, colIndex) {
+  var table = document.getElementById(tableId);
+  var rows = Array.from(table.rows).slice(1); // header overslaan
+  var ascending = table.getAttribute("data-sort-dir") !== "asc";
+  rows.sort(function(a,b){
+    var x = a.cells[colIndex].innerText.toLowerCase();
+    var y = b.cells[colIndex].innerText.toLowerCase();
+    if(x<y) return ascending?-1:1;
+    if(x>y) return ascending?1:-1;
+    return 0;
+  });
+  rows.forEach(row => table.appendChild(row));
+  table.setAttribute("data-sort-dir", ascending?"asc":"desc");
+}
+</script>
 
 </body>
 </html>
+
 
 
 
