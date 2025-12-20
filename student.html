@@ -1,73 +1,33 @@
 <!DOCTYPE html>
 <html lang="nl">
 <head>
-  <meta charset="UTF-8" />
-  <title>Navigatie Menu</title>
-  <style>
-    body {
-      font-family: Arial, sans-serif;
-      margin: 0;
-      padding: 0;
-    }
-
-    nav {
-      background-color: #f2f2f2;
-      padding: 0 16px;
-    }
-
-    .menu {
-      list-style: none;
-      display: flex;
-      margin: 0;
-      padding: 0;
-    }
-
-    .menu li {
-      margin-right: 12px;
-    }
-
-    .menu a {
-      display: block;
-      padding: 14px 20px;
-      text-decoration: none;
-      color: #333;
-      border-radius: 6px 6px 0 0;
-    }
-
-    .menu a:hover {
-      background-color: #dcdcdc;
-    }
-
-    /* Actieve pagina */
-    .menu a.active {
-      background-color: #999;
-      color: #fff;
-      font-weight: bold;
-    }
-  </style>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Student – Labinterpretatie</title>
+<link rel="stylesheet" href="./style.css">
 </head>
+
 <body>
 
 <nav>
-  <ul class="menu">
-    <li><a href="doktersassistent.html">Doktersassistent</a></li>
-    <li><a href="huisarts.html">Huisarts</a></li>
-    <li><a href="specialist.html">Specialist</a></li>
-    <li><a href="student.html">Student</a></li>
-  </ul>
+  <div class="nav-container">
+    <span class="logo">Labinterpretatie</span>
+    <ul class="menu">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="doktersassistent.html">Doktersassistent</a></li>
+      <li><a href="huisarts.html">Huisarts</a></li>
+      <li><a href="specialist.html">Specialist</a></li>
+      <li><a class="active" href="student.html">Student</a></li>
+    </ul>
+    <span class="hamburger">☰</span>
+  </div>
 </nav>
 
-<script>
-  // Zet actieve klasse op basis van huidige pagina
-  const links = document.querySelectorAll('.menu a');
-  const currentPage = window.location.pathname.split('/').pop();
+<main>
+  <h1>Student</h1>
+  <p>Theoretische uitleg en leerpunten.</p>
+</main>
 
-  links.forEach(link => {
-    if (link.getAttribute('href') === currentPage) {
-      link.classList.add('active');
-    }
-  });
-</script>
-
+<script src="./script.js"></script>
 </body>
 </html>
