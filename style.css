@@ -1,0 +1,72 @@
+/* ======================
+   ALGEMEEN
+   ====================== */
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+}
+
+/* ======================
+   NAVIGATIEMENU
+   ====================== */
+nav {
+  background-color: #f2f2f2;
+  padding: 0 16px;
+}
+
+.menu {
+  list-style: none;
+  display: flex;
+  margin: 0;
+  padding: 0;
+}
+
+.menu li {
+  margin-right: 12px;
+}
+
+.menu a {
+  display: block;
+  padding: 14px 20px;
+  text-decoration: none;
+  color: #333;
+  border-radius: 6px 6px 0 0;
+}
+
+.menu a:hover {
+  background-color: #dcdcdc;
+}
+
+/* Actieve pagina */
+.menu a.active {
+  background-color: #999;
+  color: #fff;
+  font-weight: bold;
+}
+
+/* ======================
+   LABTABEL
+   ====================== */
+.labtabel {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 20px;
+}
+
+.labtabel th,
+.labtabel td {
+  border: 1px solid #ccc;
+  padding: 10px;
+  vertical-align: top;
+}
+
+.labtabel th {
+  background-color: #f2f2f2;
+  text-align: left;
+}
+
+.labtabel .section td {
+  background-color: #e6e6e6;
+  font-weight: bold;
+}
