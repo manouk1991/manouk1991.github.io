@@ -1,34 +1,128 @@
 <!DOCTYPE html>
 <html lang="nl">
 <head>
-  <meta charset="UTF-8">
-  <title>Doktersassistent</title>
-  <link rel="stylesheet" href="style.css">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Doktersassistent - Labwaarden</title>
+<style>
+  body {
+    font-family: Arial, sans-serif;
+    margin: 20px;
+    background-color: #f9f9f9;
+  }
+  h1 {
+    text-align: center;
+    margin-bottom: 30px;
+  }
+  .accordion-button {
+    background-color: #4CAF50;
+    color: white;
+    cursor: pointer;
+    padding: 15px;
+    width: 100%;
+    border: none;
+    text-align: left;
+    outline: none;
+    font-size: 18px;
+    transition: 0.3s;
+    margin-bottom: 5px;
+    border-radius: 5px;
+  }
+  .accordion-button.active {
+    background-color: #45a049;
+  }
+  .accordion-content {
+    padding: 15px;
+    display: none;
+    overflow: hidden;
+    background-color: #fff;
+    border-left: 4px solid #4CAF50;
+    border-radius: 0 0 5px 5px;
+    margin-bottom: 10px;
+  }
+  .section-title {
+    font-weight: bold;
+    margin-top: 10px;
+    color: #333;
+  }
+  .alert-low { color: #d9534f; font-weight: bold; }
+  .alert-high { color: #f0ad4e; font-weight: bold; }
+  @media (max-width: 600px) {
+    .accordion-button { font-size: 16px; padding: 12px; }
+  }
+</style>
 </head>
 <body>
 
-<nav>
-  <ul class="menu">
-    <li><a href="index.html">Home</a></li>
-    <li><a class="active" href="doktersassistent.html">Doktersassistent</a></li>
-    <li><a href="huisarts.html">Huisarts</a></li>
-    <li><a href="specialist.html">Specialist</a></li>
-    <li><a href="student.html">Student</a></li>
+<h1>Doktersassistent - Labwaarden</h1>
+
+<!-- Hb Accordion -->
+<button class="accordion-button">Hb</button>
+<div class="accordion-content">
+  <p><span class="section-title">Spoedindicatie:</span> <span class="alert-low">Hb < 6 mmol/L</span></p>
+  <p><span class="section-title">Vragen:</span></p>
+  <ul>
+    <li>Vrouwen: hevige menstruatie (scorekaart)?</li>
+    <li>Kinderen: infectie vorige maand?</li>
+    <li>Overig: vegetariër, recente ingreep, ontlastingspatroon, buikpijn, gewichtsverlies, bloed in ontlasting/ braaksel</li>
   </ul>
-</nav>
+  <p><span class="section-title">Aanvullend onderzoek:</span></p>
+  <ul>
+    <li>MCV, ferritine</li>
+    <li>Bij MCV afwijkend: BSE, bloedbeeld, LDH, ijzer + transferrine, eGFR + creatinine, vitamine B12, foliumzuur</li>
+  </ul>
+  <p><span class="section-title">Beleid:</span></p>
+  <ul>
+    <li>IJzergebreksanemie: ferrofumuraat 1dd200mg, doorgaan 2-3 maanden na normalisatie</li>
+    <li>B12 tekort: 1dd 1 mg</li>
+    <li>Foliumzuur tekort: 1dd 1 mg, na 1 maand Hb controle</li>
+    <li>Overig: overleg met arts indien nodig</li>
+  </ul>
+</div>
 
-<main>
-  <h1>Doktersassistent</h1>
+<!-- Trombocyten Accordion -->
+<button class="accordion-button">Trombocyten</button>
+<div class="accordion-content">
+  <p><span class="section-title">Spoedindicatie:</span> <span class="alert-low">Trombo's <50 x10E9/L</span></p>
+  <p><span class="section-title">Vragen:</span></p>
+  <ul>
+    <li>Recent ziek geweest?</li>
+    <li>Vaak bloedneuzen of blauwe plekken?</li>
+    <li>Stollingsziektes in familie?</li>
+    <li>Medicatiegebruik controleren: Quindine, goud, cotrimoxazol, LMWH</li>
+  </ul>
+  <p><span class="section-title">Aanvullend onderzoek:</span></p>
+  <ul>
+    <li>Indien afwijkend: indicatie verwijzing specialist</li>
+  </ul>
+  <p><span class="section-title">Beleid:</span> Te overleggen met arts</p>
+</div>
 
-  <button class="lab-header">Hb ↓ (anemie)</button>
-  <div class="lab-content">
-    <p><strong>Spoed:</strong> Hb &lt; 6 mmol/L → arts vandaag</p>
-    <p><strong>Vragen:</strong> Hevige menstruatie, recente infectie, zwarte ontlasting</p>
-    <p><strong>Aanvullend onderzoek:</strong> MCV, Ferritine</p>
-    <p><strong>Beleid:</strong> Ferrofumaraat 200 mg 1dd, controle Hb na 1 maand</p>
-  </div>
-</main>
+<!-- CRP Accordion -->
+<button class="accordion-button">CRP</button>
+<div class="accordion-content">
+  <p><span class="section-title">Spoedindicatie:</span> <span class="alert-high">≥20 mg/L</span></p>
+  <p><span class="section-title">Vragen:</span></p>
+  <ul>
+    <li>Bij hoesten: <20 = viraal, 20-100 = mogelijk antibiotica, >100 = antibiotica</li>
+    <li>Bij diverticulitis: >100 = meer kans op complicaties</li>
+  </ul>
+  <p><span class="section-title">Aanvullend onderzoek:</span> Afhankelijk van verdenking</p>
+  <p><span class="section-title">Beleid:</span> Richtlijn volgen, overleg met arts indien nodig</p>
+</div>
 
-<script src="script.js"></script>
+<!-- Voeg hier de rest van de labwaarden toe op dezelfde manier -->
+
+<script>
+const accordions = document.querySelectorAll('.accordion-button');
+accordions.forEach(btn => {
+  btn.addEventListener('click', () => {
+    btn.classList.toggle('active');
+    const content = btn.nextElementSibling;
+    content.style.display = content.style.display === 'block' ? 'none' : 'block';
+  });
+});
+</script>
+
 </body>
 </html>
