@@ -2,12 +2,11 @@
 <html lang="nl">
 <head>
   <meta charset="UTF-8" />
-  <title>Navigatie Menu</title>
+  <title>Doktersassistent – Labinterpretatie</title>
   <style>
     body {
       font-family: Arial, sans-serif;
       margin: 0;
-      padding: 0;
     }
 
     nav {
@@ -22,26 +21,61 @@
       padding: 0;
     }
 
-    .menu li {
-      margin-right: 12px;
-    }
-
     .menu a {
       display: block;
       padding: 14px 20px;
       text-decoration: none;
       color: #333;
-      border-radius: 6px 6px 0 0;
     }
 
-    .menu a:hover {
-      background-color: #dcdcdc;
-    }
-
-    /* Actieve pagina */
     .menu a.active {
       background-color: #999;
       color: #fff;
+      font-weight: bold;
+    }
+
+    main {
+      padding: 20px;
+    }
+
+    /* Accordion */
+    .accordion {
+      border: 1px solid #ccc;
+      border-radius: 6px;
+      margin-bottom: 16px;
+    }
+
+    .accordion-header {
+      background-color: #e6e6e6;
+      padding: 12px 16px;
+      cursor: pointer;
+      font-weight: bold;
+    }
+
+    .accordion-content {
+      display: none;
+      padding: 16px;
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 14px;
+    }
+
+    th, td {
+      border: 1px solid #ccc;
+      padding: 8px;
+      vertical-align: top;
+    }
+
+    th {
+      background-color: #f5f5f5;
+      text-align: left;
+    }
+
+    .spoed {
+      color: #b00000;
       font-weight: bold;
     }
   </style>
@@ -50,22 +84,101 @@
 
 <nav>
   <ul class="menu">
-    <li><a href="doktersassistent.html">Doktersassistent</a></li>
+    <li><a href="doktersassistent.html" class="active">Doktersassistent</a></li>
     <li><a href="huisarts.html">Huisarts</a></li>
     <li><a href="specialist.html">Specialist</a></li>
     <li><a href="student.html">Student</a></li>
   </ul>
 </nav>
 
-<script>
-  // Zet actieve klasse op basis van huidige pagina
-  const links = document.querySelectorAll('.menu a');
-  const currentPage = window.location.pathname.split('/').pop();
+<main>
+  <h1>Labafwijkingen – werkwijze doktersassistent</h1>
+  <p><strong>Opzet:</strong> eerst inschatten of de arts er <em>vandaag</em> naar moet kijken, daarna gerichte vragen, onderzoek en beleid.</p>
 
-  links.forEach(link => {
-    if (link.getAttribute('href') === currentPage) {
-      link.classList.add('active');
-    }
+  <!-- Hb -->
+  <div class="accordion">
+    <div class="accordion-header">Hb – verlaagd</div>
+    <div class="accordion-content">
+      <table>
+        <tr>
+          <th>Wanneer spoed?</th>
+          <td class="spoed">Hb &lt; 6 mmol/L</td>
+        </tr>
+        <tr>
+          <th>Vragen (gericht)</th>
+          <td>
+            <strong>Vrouwen:</strong> hevige menstruatie?<br>
+            <strong>Kinderen:</strong> recente infectie?<br><br>
+            <strong>Overig:</strong><br>
+            – Vegetariër?<br>
+            – Recente ziekenhuisopname?<br>
+            – Veranderd ontlastingspatroon?<br>
+            – Buikpijn of gewichtsverlies?<br>
+            – Bloed / zwarte ontlasting → <span class="spoed">direct overleg arts</span>
+          </td>
+        </tr>
+        <tr>
+          <th>Aanvullend onderzoek</th>
+          <td>
+            Minimaal: MCV, ferritine<br><br>
+            Bij normaal MCV:<br>
+            BSE, bloedbeeld, LDH,<br>
+            ijzer + transferrine + saturatie,<br>
+            eGFR/kreatinine,<br>
+            vitamine B12, foliumzuur
+          </td>
+        </tr>
+        <tr>
+          <th>Beleid (meestal)</th>
+          <td>
+            <strong>Ijzergebrek:</strong> ferrofumuraat 200 mg 1dd<br>
+            Na normaal Hb nog 2–3 mnd door<br><br>
+            <strong>B12-tekort:</strong> 1000 mcg 1dd<br>
+            <strong>Foliumzuur:</strong> 1 mg 1dd<br><br>
+            Controle Hb na 1 maand
+          </td>
+        </tr>
+      </table>
+    </div>
+  </div>
+
+  <!-- Trombocyten -->
+  <div class="accordion">
+    <div class="accordion-header">Trombocyten – afwijkend</div>
+    <div class="accordion-content">
+      <table>
+        <tr>
+          <th>Spoed</th>
+          <td class="spoed">&lt; 50 x10⁹/L of &gt; 1000 x10⁹/L</td>
+        </tr>
+        <tr>
+          <th>Vragen</th>
+          <td>
+            – Recent ziek geweest?<br>
+            – Blauwe plekken / bloedneuzen?<br>
+            – Stollingsproblemen in familie?<br>
+            – Medicatie (LMWH, cotrimoxazol, quinidine)?
+          </td>
+        </tr>
+        <tr>
+          <th>Beleid</th>
+          <td>
+            Afwijkend → meestal verwijzing specialist<br>
+            Bekende oorzaak + stabiel → expectatief
+          </td>
+        </tr>
+      </table>
+    </div>
+  </div>
+</main>
+
+<script>
+  // accordion gedrag
+  document.querySelectorAll('.accordion-header').forEach(header => {
+    header.addEventListener('click', () => {
+      const content = header.nextElementSibling;
+      content.style.display = content.style.display === 'block' ? 'none' : 'block';
+    });
   });
 </script>
 
