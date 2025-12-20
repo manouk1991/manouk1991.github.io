@@ -3,9 +3,96 @@
 <head>
   <meta charset="UTF-8" />
   <title>Doktersassistent – Labinterpretatie</title>
-  <link rel="stylesheet" href="style.css">
+  <style>
+    /* Algemeen */
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+    }
+
+    /* Menu */
+    nav {
+      background-color: #2c3e50;
+      padding: 10px 20px;
+    }
+
+    nav ul.menu {
+      list-style: none;
+      margin: 0;
+      padding: 0;
+      display: flex;
+      gap: 20px;
+    }
+
+    nav ul.menu li a {
+      color: white;
+      text-decoration: none;
+      font-weight: bold;
+    }
+
+    nav ul.menu li a.active {
+      text-decoration: underline;
+    }
+
+    /* Main content */
+    main {
+      padding: 20px;
+    }
+
+    /* Accordion */
+    .lab-header {
+      width: 100%;
+      text-align: left;
+      padding: 10px;
+      font-size: 16px;
+      cursor: pointer;
+      border: 1px solid #ccc;
+      background-color: #f1f1f1;
+      margin-top: 10px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .lab-header.urgent {
+      background-color: #f8d7da;
+      border-color: #f5c6cb;
+    }
+
+    .lab-content {
+      display: none;
+      padding: 10px;
+      border: 1px solid #ccc;
+      border-top: none;
+      background-color: #fafafa;
+    }
+
+    table.labtabel {
+      width: 100%;
+      border-collapse: collapse;
+    }
+
+    table.labtabel th, table.labtabel td {
+      border: 1px solid #ccc;
+      padding: 5px;
+    }
+
+    table.labtabel th {
+      background-color: #eee;
+    }
+
+    .arrow {
+      font-weight: bold;
+      transition: transform 0.2s;
+    }
+
+    .lab-header.active .arrow {
+      transform: rotate(90deg);
+    }
+  </style>
 </head>
-  <body>
+<body>
 
 <nav>
   <ul class="menu">
@@ -20,64 +107,63 @@
   <h1>Overzicht labafwijkingen – Doktersassistent</h1>
 
   <div class="lab-accordion">
+    <button class="lab-header urgent">
+      Hb ↓  (anemie)
+      <span class="arrow">▸</span>
+    </button>
 
-  <button class="lab-header urgent">
-    Hb ↓  (anemie)
-    <span class="arrow">▸</span>
-  </button>
-
-  <div class="lab-content">
-    <table class="labtabel">
-      <thead>
-        <tr>
-          <th>Spoed indien</th>
-          <th>Vragen</th>
-          <th>Aanvullend onderzoek</th>
-          <th>Beleid</th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr>
-          <td>Hb &lt; 6 mmol/L</td>
-          <td>
-            <ul>
-              <li>Hevige menstruatie?</li>
-              <li>Recent infectie?</li>
-              <li>Bloedverlies?</li>
-            </ul>
-          </td>
-          <td>
-            <ul>
-              <li>MCV</li>
-              <li>Ferritine</li>
-              <li>B12</li>
-            </ul>
-          </td>
-          <td>
-            <ul>
-              <li>Ferrofumaraat 200 mg 1dd</li>
-              <li>Controle Hb na 1 maand</li>
-            </ul>
-          </td>
-        </tr>
-      </tbody>
-    </table>
+    <div class="lab-content">
+      <table class="labtabel">
+        <thead>
+          <tr>
+            <th>Spoed indien</th>
+            <th>Vragen</th>
+            <th>Aanvullend onderzoek</th>
+            <th>Beleid</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Hb &lt; 6 mmol/L</td>
+            <td>
+              <ul>
+                <li>Hevige menstruatie?</li>
+                <li>Recent infectie?</li>
+                <li>Bloedverlies?</li>
+              </ul>
+            </td>
+            <td>
+              <ul>
+                <li>MCV</li>
+                <li>Ferritine</li>
+                <li>B12</li>
+              </ul>
+            </td>
+            <td>
+              <ul>
+                <li>Ferrofumaraat 200 mg 1dd</li>
+                <li>Controle Hb na 1 maand</li>
+              </ul>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
   </div>
-
-</div>
 
 </main>
 
 <script>
-  // accordion gedrag
-  document.querySelectorAll('.accordion-header').forEach(header => {
+  // Accordion gedrag
+  document.querySelectorAll('.lab-header').forEach(header => {
     header.addEventListener('click', () => {
       const content = header.nextElementSibling;
-      content.style.display = content.style.display === 'block' ? 'none' : 'block';
+      const isVisible = content.style.display === 'block';
+      content.style.display = isVisible ? 'none' : 'block';
+      header.classList.toggle('active', !isVisible);
     });
   });
 </script>
 
 </body>
 </html>
-
