@@ -1,105 +1,207 @@
-<table class="labtabel">
-  <thead>
-    <tr>
-      <th>Parameter</th>
-      <th>Spoed indien</th>
-      <th>Vragen</th>
-      <th>Aanvullend onderzoek</th>
-      <th>Beleid</th>
-    </tr>
-  </thead>
-  <tbody>
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Doktersassistent – Labinterpretatie</title>
+  <style>
+    /* Algemeen */
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+    }
 
-    <!-- Hb -->
-    <tr class="section">
-      <td colspan="5"><strong>Hb ↓</strong></td>
-    </tr>
-    <tr>
-      <td>Hb &lt; 6 mmol/L</td>
-      <td>Spoed</td>
-      <td>
-        <ul>
-          <li>Hevige menstruatie?</li>
-          <li>Recent infectie?</li>
-          <li>Vegetariër?</li>
-          <li>Bloedverlies?</li>
-        </ul>
-      </td>
-      <td>
-        <ul>
-          <li>MCV</li>
-          <li>Ferritine</li>
-          <li>B12</li>
-          <li>Foliumzuur</li>
-        </ul>
-      </td>
-      <td>
-        <ul>
-          <li>Ijzergebrek: ferrofumaraat 200 mg 1dd</li>
-          <li>B12-tekort: 1000 mcg 1dd</li>
-          <li>Controle Hb na 1 maand</li>
-        </ul>
-      </td>
-    </tr>
+    /* Menu */
+    nav {
+      background-color: #2c3e50;
+      padding: 10px 20px;
+      position: relative;
+    }
 
-    <tr class="section">
-      <td colspan="5"><strong>Hb ↑</strong></td>
-    </tr>
-    <tr>
-      <td>Verhoogd Hb</td>
-      <td>N.v.t.</td>
-      <td>
-        <ul>
-          <li>Roken?</li>
-          <li>Snurken?</li>
-          <li>Hoogteverblijf?</li>
-        </ul>
-      </td>
-      <td>
-        <ul>
-          <li>Bloedbeeld</li>
-          <li>EPO</li>
-          <li>Creatinine + eGFR</li>
-        </ul>
-      </td>
-      <td>Overleg arts</td>
-    </tr>
+    nav ul.menu {
+      list-style: none;
+      margin: 0;
+      padding: 0;
+      display: flex;
+      gap: 20px;
+    }
 
-    <!-- CRP -->
-    <tr class="section">
-      <td colspan="5"><strong>CRP ↑</strong></td>
-    </tr>
-    <tr>
-      <td>CRP ≥ 20 mg/L</td>
-      <td>Afhankelijk van kliniek</td>
-      <td>Klachten passend bij infectie?</td>
-      <td>N.v.t.</td>
-      <td>
-        <ul>
-          <li>20–100: overweeg AB</li>
-          <li>&gt;100: AB geïndiceerd</li>
-        </ul>
-      </td>
-    </tr>
+    nav ul.menu li a {
+      color: white;
+      text-decoration: none;
+      font-weight: bold;
+    }
 
-    <!-- Natrium -->
-    <tr class="section">
-      <td colspan="5"><strong>Natrium</strong></td>
-    </tr>
-    <tr>
-      <td>&lt;128 mmol/L</td>
-      <td>Spoed</td>
-      <td>Verwardheid? Misselijkheid?</td>
-      <td>Herhaal Na, osmolaliteit</td>
-      <td>Overleg arts</td>
-    </tr>
-    <tr>
-      <td>&gt;148 mmol/L</td>
-      <td>Spoed</td>
-      <td>Dorst? Weinig intake?</td>
-      <td>Herhaal Na</td>
-      <td>Overleg arts</td>
-    </tr>
+    nav ul.menu li a.active {
+      text-decoration: underline;
+    }
 
-  </tbody>
-</table>
+    /* Hamburger knop */
+    .hamburger {
+      display: none;
+      font-size: 24px;
+      color: white;
+      cursor: pointer;
+      position: absolute;
+      right: 20px;
+      top: 10px;
+    }
+
+    /* Accordion */
+    .lab-header {
+      width: 100%;
+      text-align: left;
+      padding: 10px;
+      font-size: 16px;
+      cursor: pointer;
+      border: 1px solid #ccc;
+      background-color: #f1f1f1;
+      margin-top: 10px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .lab-header.urgent {
+      background-color: #f8d7da;
+      border-color: #f5c6cb;
+    }
+
+    .lab-content {
+      display: none;
+      padding: 10px;
+      border: 1px solid #ccc;
+      border-top: none;
+      background-color: #fafafa;
+    }
+
+    table.labtabel {
+      width: 100%;
+      border-collapse: collapse;
+    }
+
+    table.labtabel th, table.labtabel td {
+      border: 1px solid #ccc;
+      padding: 5px;
+    }
+
+    table.labtabel th {
+      background-color: #eee;
+    }
+
+    .arrow {
+      font-weight: bold;
+      transition: transform 0.2s;
+    }
+
+    .lab-header.active .arrow {
+      transform: rotate(90deg);
+    }
+
+    main {
+      padding: 20px;
+    }
+
+    /* Responsive */
+    @media screen and (max-width: 768px) {
+      nav ul.menu {
+        flex-direction: column;
+        display: none; /* standaard verborgen */
+        gap: 10px;
+      }
+
+      nav ul.menu.show {
+        display: flex;
+      }
+
+      .hamburger {
+        display: block;
+      }
+    }
+  </style>
+</head>
+<body>
+
+<nav>
+  <span class="hamburger">☰</span>
+  <ul class="menu">
+    <li><a href="index.html" class="active">Doktersassistent</a></li>
+    <li><a href="huisarts.html">Huisarts</a></li>
+    <li><a href="specialist.html">Specialist</a></li>
+    <li><a href="student.html">Student</a></li>
+  </ul>
+</nav>
+
+<main>
+  <h1>Overzicht labafwijkingen – Doktersassistent</h1>
+
+  <div class="lab-accordion">
+    <button class="lab-header urgent">
+      Hb ↓  (anemie)
+      <span class="arrow">▸</span>
+    </button>
+
+    <div class="lab-content">
+      <table class="labtabel">
+        <thead>
+          <tr>
+            <th>Spoed indien</th>
+            <th>Vragen</th>
+            <th>Aanvullend onderzoek</th>
+            <th>Beleid</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Hb &lt; 6 mmol/L</td>
+            <td>
+              <ul>
+                <li>Hevige menstruatie?</li>
+                <li>Recent infectie?</li>
+                <li>Bloedverlies?</li>
+              </ul>
+            </td>
+            <td>
+              <ul>
+                <li>MCV</li>
+                <li>Ferritine</li>
+                <li>B12</li>
+              </ul>
+            </td>
+            <td>
+              <ul>
+                <li>Ferrofumaraat 200 mg 1dd</li>
+                <li>Controle Hb na 1 maand</li>
+              </ul>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+</main>
+
+<script>
+  // Hamburger menu togglen
+  const hamburger = document.querySelector('.hamburger');
+  const menu = document.querySelector('nav ul.menu');
+
+  hamburger.addEventListener('click', () => {
+    menu.classList.toggle('show');
+  });
+
+  // Accordion gedrag
+  document.querySelectorAll('.lab-header').forEach(header => {
+    header.addEventListener('click', () => {
+      const content = header.nextElementSibling;
+      const isVisible = content.style.display === 'block';
+      content.style.display = isVisible ? 'none' : 'block';
+      header.classList.toggle('active', !isVisible);
+    });
+  });
+</script>
+
+</body>
+</html>
