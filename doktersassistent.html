@@ -92,84 +92,91 @@
 </nav>
 
 <main>
-  <h1>Labafwijkingen – werkwijze doktersassistent</h1>
-  <p><strong>Opzet:</strong> eerst inschatten of de arts er <em>vandaag</em> naar moet kijken, daarna gerichte vragen, onderzoek en beleid.</p>
+  <h1>Overzicht labafwijkingen – Doktersassistent</h1>
 
-  <!-- Hb -->
-  <div class="accordion">
-    <div class="accordion-header">Hb – verlaagd</div>
-    <div class="accordion-content">
-      <table>
-        <tr>
-          <th>Wanneer spoed?</th>
-          <td class="spoed">Hb &lt; 6 mmol/L</td>
-        </tr>
-        <tr>
-          <th>Vragen (gericht)</th>
-          <td>
-            <strong>Vrouwen:</strong> hevige menstruatie?<br>
-            <strong>Kinderen:</strong> recente infectie?<br><br>
-            <strong>Overig:</strong><br>
-            – Vegetariër?<br>
-            – Recente ziekenhuisopname?<br>
-            – Veranderd ontlastingspatroon?<br>
-            – Buikpijn of gewichtsverlies?<br>
-            – Bloed / zwarte ontlasting → <span class="spoed">direct overleg arts</span>
-          </td>
-        </tr>
-        <tr>
-          <th>Aanvullend onderzoek</th>
-          <td>
-            Minimaal: MCV, ferritine<br><br>
-            Bij normaal MCV:<br>
-            BSE, bloedbeeld, LDH,<br>
-            ijzer + transferrine + saturatie,<br>
-            eGFR/kreatinine,<br>
-            vitamine B12, foliumzuur
-          </td>
-        </tr>
-        <tr>
-          <th>Beleid (meestal)</th>
-          <td>
-            <strong>Ijzergebrek:</strong> ferrofumuraat 200 mg 1dd<br>
-            Na normaal Hb nog 2–3 mnd door<br><br>
-            <strong>B12-tekort:</strong> 1000 mcg 1dd<br>
-            <strong>Foliumzuur:</strong> 1 mg 1dd<br><br>
-            Controle Hb na 1 maand
-          </td>
-        </tr>
-      </table>
-    </div>
-  </div>
+  <div class="accordion"><div class="accordion-header">Hb</div><div class="accordion-content"><table>
+    <tr><th>Afwijking</th><th>Spoed indien</th><th>Vragen</th><th>Aanvullend onderzoek</th><th>Beleid</th></tr>
+    <tr>
+      <td>⬇ Hb</td>
+      <td class="spoed">&lt; 6 mmol/L</td>
+      <td>Hevige menstruatie? Infectie kind? Vegetariër? Buikklachten? Bloed/zwarte ontlasting → spoed arts</td>
+      <td>MCV, ferritine ± BSE, bloedbeeld, LDH, ijzer, transferrine, eGFR, B12, foliumzuur</td>
+      <td>Ijzer: ferrofumuraat 200 mg 1dd. B12: 1000 mcg 1dd. Foliumzuur: 1 mg 1dd. Controle Hb na 1 maand.</td>
+    </tr>
+    <tr>
+      <td>⬆ Hb</td>
+      <td>N.v.t.</td>
+      <td>Roken? Snurken? EPO/steroïden? Hoogteverblijf? Cardio-pulmonale klachten?</td>
+      <td>Bloedbeeld, leverpanel, creatinine, EPO (zo nodig)</td>
+      <td>Overleg arts</td>
+    </tr>
+  </table></div></div>
 
-  <!-- Trombocyten -->
-  <div class="accordion">
-    <div class="accordion-header">Trombocyten – afwijkend</div>
-    <div class="accordion-content">
-      <table>
-        <tr>
-          <th>Spoed</th>
-          <td class="spoed">&lt; 50 x10⁹/L of &gt; 1000 x10⁹/L</td>
-        </tr>
-        <tr>
-          <th>Vragen</th>
-          <td>
-            – Recent ziek geweest?<br>
-            – Blauwe plekken / bloedneuzen?<br>
-            – Stollingsproblemen in familie?<br>
-            – Medicatie (LMWH, cotrimoxazol, quinidine)?
-          </td>
-        </tr>
-        <tr>
-          <th>Beleid</th>
-          <td>
-            Afwijkend → meestal verwijzing specialist<br>
-            Bekende oorzaak + stabiel → expectatief
-          </td>
-        </tr>
-      </table>
-    </div>
-  </div>
+  <div class="accordion"><div class="accordion-header">Trombocyten</div><div class="accordion-content"><table>
+    <tr><th>Afwijking</th><th>Spoed indien</th><th>Vragen</th><th>Aanvullend onderzoek</th><th>Beleid</th></tr>
+    <tr>
+      <td>⬇ Trombocyten</td>
+      <td class="spoed">&lt; 50 x10⁹/L</td>
+      <td>Recent ziek? Bloedingen? Familieanamnese? Medicatie?</td>
+      <td>Afwijkend → verwijzing specialist</td>
+      <td>Expectatief indien bekend en stabiel</td>
+    </tr>
+    <tr>
+      <td>⬆ Trombocyten</td>
+      <td class="spoed">&gt; 1000 x10⁹/L</td>
+      <td>Infectie? Operatie? Oogklachten? Ischemische klachten?</td>
+      <td>—</td>
+      <td>Overleg arts</td>
+    </tr>
+  </table></div></div>
+
+  <div class="accordion"><div class="accordion-header">CRP</div><div class="accordion-content"><table>
+    <tr><th>Afwijking</th><th>Spoed indien</th><th>Vragen</th><th>Aanvullend onderzoek</th><th>Beleid</th></tr>
+    <tr>
+      <td>⬆ CRP</td>
+      <td class="spoed">≥ 20 mg/L</td>
+      <td>Hoesten? Buikpijn? Koorts?</td>
+      <td>Afhankelijk van kliniek</td>
+      <td><20 viraal; 20–100 mogelijk AB; >100 AB / gecompliceerd</td>
+    </tr>
+  </table></div></div>
+
+  <div class="accordion"><div class="accordion-header">Leukocyten / Neutrofielen</div><div class="accordion-content"><table>
+    <tr><th>Afwijking</th><th>Spoed indien</th><th>Vragen</th><th>Aanvullend onderzoek</th><th>Beleid</th></tr>
+    <tr>
+      <td>⬆ Leukocyten</td>
+      <td>&gt; 12 x10⁹/L</td>
+      <td>Infectieklachten?</td>
+      <td>—</td>
+      <td>Contextafhankelijk</td>
+    </tr>
+    <tr>
+      <td>⬇ Leukocyten</td>
+      <td>&lt; 4 x10⁹/L</td>
+      <td>Medicatie? Infecties?</td>
+      <td>—</td>
+      <td>Overleg arts</td>
+    </tr>
+    <tr>
+      <td>⬇ Neutrofielen</td>
+      <td class="spoed">&lt; 0,5 x10⁹/L</td>
+      <td>Koorts?</td>
+      <td>—</td>
+      <td>Spoedoverleg</td>
+    </tr>
+  </table></div></div>
+
+  <div class="accordion"><div class="accordion-header">Elektrolyten & Overig</div><div class="accordion-content"><table>
+    <tr><th>Parameter</th><th>Spoed indien</th><th>Opmerkingen</th><th colspan="2">Beleid</th></tr>
+    <tr><td>Natrium</td><td class="spoed">&lt;128 of &gt;148</td><td>128–148 zonder klachten</td><td colspan="2">Overleg arts</td></tr>
+    <tr><td>Kalium</td><td class="spoed">&lt;2,5 of &gt;5</td><td>2,5–3,5 zonder klachten</td><td colspan="2">Kaliumdrank</td></tr>
+    <tr><td>Calcium</td><td>Afwijkend</td><td>Altijd actie nodig</td><td colspan="2">Overleg</td></tr>
+    <tr><td>Glucose</td><td class="spoed">&lt;3,5 of &gt;15</td><td>15–25 drinken indien niet ziek</td><td colspan="2">2-4-6 regel</td></tr>
+    <tr><td>ALAT</td><td class="spoed">♂ ≥150 / ♀ ≥120</td><td>Tot 1,5x normaal → afwachten</td><td colspan="2">Herhaal / overleg</td></tr>
+    <tr><td>Lipase</td><td class="spoed">≥180</td><td>&lt;3x normaal zonder klachten</td><td colspan="2">Overleg</td></tr>
+    <tr><td>hs-cTn</td><td class="spoed">&gt;5</td><td>Lage verdenking ACS</td><td colspan="2">Protocol</td></tr>
+    <tr><td>Helicobacter</td><td>N.v.t.</td><td>—</td><td colspan="2">Volgens richtlijn</td></tr>
+  </table></div></div>
 </main>
 
 <script>
@@ -184,3 +191,4 @@
 
 </body>
 </html>
+
