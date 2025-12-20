@@ -1,63 +1,32 @@
 <!DOCTYPE html>
 <html lang="nl">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Doktersassistent – Labinterpretatie</title>
-<link rel="stylesheet" href="./style.css">
+  <meta charset="UTF-8">
+  <title>Doktersassistent</title>
+  <link rel="stylesheet" href="style.css">
 </head>
-
 <body>
 
 <nav>
-  <div class="nav-container">
-    <span class="logo">Labinterpretatie</span>
-    <ul class="menu">
-      <li><a href="index.html">Home</a></li>
-      <li><a class="active" href="doktersassistent.html">Doktersassistent</a></li>
-      <li><a href="huisarts.html">Huisarts</a></li>
-      <li><a href="specialist.html">Specialist</a></li>
-      <li><a href="student.html">Student</a></li>
-    </ul>
-    <span class="hamburger">☰</span>
-  </div>
+  <ul class="menu">
+    <li><a href="index.html">Home</a></li>
+    <li><a class="active" href="doktersassistent.html">Doktersassistent</a></li>
+    <li><a href="huisarts.html">Huisarts</a></li>
+    <li><a href="specialist.html">Specialist</a></li>
+    <li><a href="student.html">Student</a></li>
+  </ul>
 </nav>
 
 <main>
   <h1>Doktersassistent</h1>
 
-  <div class="labblok">
-    <div class="lab-header down">
-      Hb ↓ (anemie)
-      <span>▸</span>
-    </div>
-
-    <div class="lab-content">
-      <h3>Stap 1 – Spoed</h3>
-      Hb &lt; 6 mmol/L → vandaag arts
-
-      <h3>Stap 2 – Vragen</h3>
-      <ul>
-        <li>Hevige menstruatie?</li>
-        <li>Recent infectie?</li>
-        <li>Zwarte ontlasting of bloed?</li>
-      </ul>
-
-      <h3>Stap 3 – Aanvullend onderzoek</h3>
-      <ul>
-        <li>MCV</li>
-        <li>Ferritine</li>
-      </ul>
-
-      <h3>Stap 4 – Beleid</h3>
-      <ul>
-        <li>Ferrofumaraat 200 mg 1dd</li>
-        <li>Controle Hb na 1 maand</li>
-      </ul>
-    </div>
+  <button class="lab-header">Hb ↓ (anemie)</button>
+  <div class="lab-content">
+    <p><strong>Spoed:</strong> Hb &lt; 6 mmol/L → arts vandaag</p>
   </div>
+
 </main>
 
-<script src="./script.js"></script>
+<script src="script.js"></script>
 </body>
 </html>
