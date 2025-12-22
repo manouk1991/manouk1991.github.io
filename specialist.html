@@ -1,27 +1,49 @@
 <!DOCTYPE html>
 <html lang="nl">
 <head>
-  <meta charset="UTF-8">
-  <title>Specialist</title>
-  <link rel="stylesheet" href="style.css">
+    <meta charset="UTF-8">
+    <title>Specialist</title>
+    <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
 
-<nav>
-  <ul class="menu">
-    <li><a href="index.html">Home</a></li>
-    <li><a href="doktersassistent.html">Doktersassistent</a></li>
-    <li><a href="huisarts.html">Huisarts</a></li>
-    <li><a class="active" href="specialist.html">Specialist</a></li>
-    <li><a href="student.html">Student</a></li>
-  </ul>
+<nav class="menu">
+    <a href="doktersassistent.html">Doktersassistent</a>
+    <a href="huisarts.html">Huisarts</a>
+    <a href="specialist.html" class="active">Specialist</a>
+    <a href="student.html">Student</a>
 </nav>
 
+<div class="view-toggle">
+    <button onclick="collapseAll()">Korte weergave</button>
+    <button onclick="expandAll()">Uitgebreide weergave</button>
+</div>
+
 <main>
-  <h1>Specialist</h1>
-  <p>Verdieping en uitzonderingen.</p>
+
+    <div class="test">
+        <button class="test-header" onclick="toggle(this)">
+            MRI hersenen
+            <span class="value">Afwijking ⚠</span>
+        </button>
+        <div class="test-content">
+            <p><strong>Bevinding:</strong> Laesie links temporaal</p>
+            <p><strong>Vervolg:</strong> Aanvullend onderzoek</p>
+        </div>
+    </div>
+
+    <div class="test">
+        <button class="test-header" onclick="toggle(this)">
+            Biopt
+            <span class="value">Goedaardig ✓</span>
+        </button>
+        <div class="test-content">
+            <p><strong>Conclusie:</strong> Geen maligniteit</p>
+        </div>
+    </div>
+
 </main>
 
-<script src="script.js"></script>
+<script src="js/script.js"></script>
 </body>
 </html>
