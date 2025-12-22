@@ -1,27 +1,49 @@
 <!DOCTYPE html>
 <html lang="nl">
 <head>
-  <meta charset="UTF-8">
-  <title>Student</title>
-  <link rel="stylesheet" href="style.css">
+    <meta charset="UTF-8">
+    <title>Student</title>
+    <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
 
-<nav>
-  <ul class="menu">
-    <li><a href="index.html">Home</a></li>
-    <li><a href="doktersassistent.html">Doktersassistent</a></li>
-    <li><a href="huisarts.html">Huisarts</a></li>
-    <li><a href="specialist.html">Specialist</a></li>
-    <li><a class="active" href="student.html">Student</a></li>
-  </ul>
+<nav class="menu">
+    <a href="doktersassistent.html">Doktersassistent</a>
+    <a href="huisarts.html">Huisarts</a>
+    <a href="specialist.html">Specialist</a>
+    <a href="student.html" class="active">Student</a>
 </nav>
 
+<div class="view-toggle">
+    <button onclick="collapseAll()">Korte weergave</button>
+    <button onclick="expandAll()">Uitgebreide weergave</button>
+</div>
+
 <main>
-  <h1>Student</h1>
-  <p>Theorie en uitleg.</p>
+
+    <div class="test">
+        <button class="test-header" onclick="toggle(this)">
+            Casus 1 – Anemie
+            <span class="value">Hb 6.5 ⚠</span>
+        </button>
+        <div class="test-content">
+            <p><strong>Vraag:</strong> Waarschijnlijke diagnose?</p>
+            <p><strong>Hint:</strong> MCV verlaagd</p>
+        </div>
+    </div>
+
+    <div class="test">
+        <button class="test-header" onclick="toggle(this)">
+            Casus 2 – Infectie
+            <span class="value">CRP 8 ✓</span>
+        </button>
+        <div class="test-content">
+            <p><strong>Interpretatie:</strong> Geen bacteriële infectie</p>
+        </div>
+    </div>
+
 </main>
 
-<script src="script.js"></script>
+<script src="js/script.js"></script>
 </body>
 </html>
