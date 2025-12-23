@@ -2,98 +2,133 @@
 <html lang="nl">
 <head>
     <meta charset="UTF-8">
-    <title>Specialist - Laboratorium & Anemie</title>
-    <link rel="stylesheet" href="css/style.css">
+    <title>Hb Evaluatie</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+            background-color: #f9f9f9;
+        }
+
+        .menu {
+            margin-bottom: 20px;
+        }
+
+        .menu a {
+            margin-right: 15px;
+            text-decoration: none;
+            color: #333;
+            font-weight: bold;
+        }
+
+        .menu a.active {
+            color: #007BFF;
+        }
+
+        .hb-block {
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            margin-bottom: 15px;
+            background-color: #fff;
+        }
+
+        .hb-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 10px 15px;
+            cursor: pointer;
+            font-weight: bold;
+            background-color: #e6e6e6;
+            border-radius: 5px 5px 0 0;
+        }
+
+        .hb-content {
+            display: none;
+            padding: 15px;
+            line-height: 1.5;
+        }
+
+        .arrow {
+            font-size: 18px;
+            transition: transform 0.2s;
+        }
+
+        .arrow.open {
+            transform: rotate(180deg);
+        }
+
+        ul {
+            margin: 5px 0 10px 20px;
+        }
+
+        li {
+            margin-bottom: 5px;
+        }
+    </style>
 </head>
 <body>
 
 <nav class="menu">
-    <a href="doktersassistent.html">Doktersassistent</a>
-    <a href="huisarts.html">Huisarts</a>
-    <a href="specialist.html" class="active">Specialist</a>
-    <a href="student.html">Student</a>
+    <a href="#" class="active">Specialist</a>
+    <a href="#">Huisarts</a>
+    <a href="#">Doktersassistent</a>
+    <a href="#">Student</a>
 </nav>
 
-<div class="view-toggle">
-    <button onclick="collapseAll()">Korte weergave</button>
-    <button onclick="expandAll()">Uitgebreide weergave</button>
+<h1>Hb Evaluatie</h1>
+
+<div class="hb-block">
+    <div class="hb-header" onclick="toggleHb(this)">
+        ⬇ Te laag Hb
+        <span class="arrow">▼</span>
+    </div>
+    <div class="hb-content">
+        <p><strong>Vrouwen:</strong> Controleer hevige menstruatie.</p>
+        <p><strong>Kinderen:</strong> Infectie in voorgaande maand?</p>
+        <p>Vervolgvragen bij geen duidelijke oorzaak:</p>
+        <ul>
+            <li>Vegetarisch dieet of speciale voeding?</li>
+            <li>Recent ziekenhuisingreep?</li>
+            <li>Veranderd ontlastingspatroon?</li>
+            <li>Buikpijn of gewichtsverlies?</li>
+            <li>Bloed in ontlasting/braaksel → spoedoverleg</li>
+            <li>Zwarte ontlasting door voeding/supplement?</li>
+        </ul>
+        <p><strong>Observaties:</strong> Ademhaling, bloeddruk, pols, temperatuur, huid, slijmvliezen, lymfeklieren, lever/milt, rectaal/vaginaal toucher op indicatie.</p>
+        <p><strong>Laboratorium:</strong> Startwaarden bij bloeding: Hb, type & screen, bloedgas, stolling, trombocyten, calcium, TEM/TEG.</p>
+        <p><strong>Niet-actief bloedend:</strong> Bloedbeeld, leukocyten, BSE, CRP, lever/nierfunctie, ijzerstatus, B12, foliumzuur, eiwitelektroforese, op indicatie DAT of hemoglobineonderzoek.</p>
+        <p><strong>Behandeling:</strong> IJzersuppletie, B12, foliumzuur zoals indicatie, transfusieoverweging bij zeer laag Hb, bij actieve bloeding: infuus, volumeresuscitatie, IC-consult bij instabiliteit.</p>
+    </div>
 </div>
 
-<main>
-
-    <div class="test">
-        <button class="test-header" onclick="toggle(this)">
-            Hb <6 mmol/L
-        </button>
-        <div class="test-content">
-            <p><strong>Vrouwen:</strong> Hevige menstruatie (scorekaart?)</p>
-            <p><strong>Kinderen:</strong> Infectie in de voorgaande maand?</p>
-            <p>Indien bovenstaande het geval, geen extra info nodig. Zo niet, verder met:</p>
-            <ul>
-                <li>Bent u vegetariër of iets dergelijks?</li>
-                <li>Heeft u recent een ingreep in ziekenhuis gehad?</li>
-                <li>Veranderd ontlastingspatroon?</li>
-                <li>Buikpijn?</li>
-                <li>Gewichtsverlies?</li>
-                <li>Ontlasting/braaksel met bloed of zwarte kleur → spoedoverleg arts</li>
-                <li>Zwarte ontlasting door voeding/supplementen?</li>
-            </ul>
-            <p><strong>Observaties:</strong> Ademhalingsfrequentie, bloeddruk, pols, temperatuur, huid en slijmvliezen, lymfadenopathie, hepatosplenomegalie, rectaal/vaginaal toucher op indicatie.</p>
-        </div>
+<div class="hb-block">
+    <div class="hb-header" onclick="toggleHb(this)">
+        ⬆ Te hoog Hb
+        <span class="arrow">▼</span>
     </div>
-
-    <div class="test">
-        <button class="test-header" onclick="toggle(this)">
-            Aanvullende laboratoriumonderzoeken
-        </button>
-        <div class="test-content">
-            <p><strong>Bij bloeding:</strong></p>
-            <ul>
-                <li>Type & screen, Hb, Bloedgas, APTT, PT, Fibrinogeen, Trombocyten, Ca, TEM/TEG</li>
-            </ul>
-            <p><strong>Niet actief bloedend, oorzaak achterhalen:</strong></p>
-            <ul>
-                <li>Bloedbeeld, Leucocyten + differentiatie, BSE, CRP, Leverpanel, eGFR + kreatinine, LDH, Haptoglobine, TSH, Ijzer + transferrine, Vitamine B12, Foliumzuur, Eiwitelektroforese</li>
-                <li>Op indicatie: DAT, Hemoglobulinopathie onderzoek (familie, afkomst Middellandse Zeegebied/Afrika/Azië/Midden-Oosten/Caraïbisch gebied)</li>
-            </ul>
-            <p><strong>Behandeling ijzergebreksanemie:</strong> Ferrofumuraat 1dd200mg, na normalisatie Hb nog 2-3 maanden door. Specifiek bij menstruatie overweeg suppletie of behandeling oorzaak.</p>
-            <p><strong>B12 tekort:</strong> 1dd1 tblt 1mg</p>
-            <p><strong>Foliumzuur tekort:</strong> 1dd1mg, controle Hb na 1 maand</p>
-        </div>
+    <div class="hb-content">
+        <p>Controleer levensstijl en medische geschiedenis:</p>
+        <ul>
+            <li>Roken, vochtinname, slaap (snurken?), EPO/steroïden gebruik, verblijf op hoogte.</li>
+            <li>Symptomen: hoesten, benauwdheid, hartkloppingen, oedeem, lengte/gewicht.</li>
+        </ul>
+        <p><strong>Observaties:</strong> Bloeddruk, lever/milt.</p>
+        <p><strong>Laboratorium:</strong> Bloedbeeld, lever, nierfunctie, op indicatie EPO-spiegel.</p>
+        <p><strong>DNA & beenmergonderzoek:</strong> Op indicatie, bij meerdere aangedane cellijnen of hematologische symptomen. Beeldvorming en functieonderzoek volgens indicatie.</p>
+        <p><strong>Behandeling:</strong> Erytrocytose/polycythemie: flebotomie (streef Ht<0,45), cytoreductie (hydroxycarbamide), trombocytenaggregatieremmers, allopurinol bij verhoogd urinezuur.</p>
     </div>
+</div>
 
-    <div class="test">
-        <button class="test-header" onclick="toggle(this)">
-            Transfusie & Indicaties
-        </button>
-        <div class="test-content">
-            <p>Overweeg erytrocyten transfusie bij:</p>
-            <ul>
-                <li>Hb ≤5 bij klinische hematologische patiënt, ACS, stabiel coronair lijden met lage tensie & hoge hartslag, cardio-pulmonale beperking perioperatief ≥65 jaar</li>
-                <li>Specifieke thresholds voor IC, perioperatief en post-cardiochirurgie zoals beschreven in richtlijnen</li>
-            </ul>
-            <p>Bij bloeding: infuus, volumeresuscitatie, antistolling indien INR>1,5, IC consult bij hemodynamische instabiliteit, streefwaarden Hb & trombogetal afhankelijk van situatie</p>
-        </div>
-    </div>
+<script>
+    function toggleHb(header) {
+        const content = header.nextElementSibling;
+        const arrow = header.querySelector('.arrow');
+        const isOpen = content.style.display === 'block';
+        content.style.display = isOpen ? 'none' : 'block';
+        arrow.classList.toggle('open', !isOpen);
+    }
+</script>
 
-    <div class="test">
-        <button class="test-header" onclick="toggle(this)">
-            Overige diagnostiek en behandeling
-        </button>
-        <div class="test-content">
-            <ul>
-                <li>Algemeen bloedonderzoek, leverpanel, nierfunctie, EPO-spiegel op indicatie</li>
-                <li>DNA-onderzoek: JAK2 V167F, EPOR, BPGM, HBB, EGLN1, EPAS1, VHL</li>
-                <li>Beenmergonderzoek bij multi-lineaire afwijkingen, splenomegalie, symptomen hematologische maligniteit</li>
-                <li>Beeldvorming: X-thorax, echo abdomen</li>
-                <li>Functietests: longfunctie, cardiologische screening</li>
-                <li>Erytrocytose/polycythemie: flebotomie, cytoreductie, trombocytenaggregatieremmers, allopurinol bij verhoogd urinezuur</li>
-            </ul>
-        </div>
-    </div>
-
-</main>
-
-<script src="js/script.js"></script>
 </body>
 </html>
