@@ -1,5 +1,7 @@
-function toggleTest(el) {
-  el.classList.toggle("open");
+console.log("app.js geladen");
+
+function toggleTest(test) {
+  test.classList.toggle("open");
 }
 
 function openAll() {
