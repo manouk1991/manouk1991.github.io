@@ -19,40 +19,153 @@
 
 <main>
 
-<h1>Student</h1>
+<h1>Student – Labuitslagen uitgelegd</h1>
 
 <div class="toggle-bar">
   <button onclick="closeAll()">Korte weergave</button>
   <button onclick="openAll()">Uitgebreide weergave</button>
 </div>
 
+<!-- ================= Hb ================= -->
 <div class="test">
   <div class="test-header" onclick="toggleTest(this.parentElement)">
-    <span>Hb</span>
-    <span class="test-value">Anemie</span>
+    <span>Hemoglobine (Hb)</span>
+    <span class="test-value">↓ Anemie</span>
   </div>
+
   <div class="test-content">
-    <p>Anemie kan micro-, normo- of macrocytair zijn.</p>
+
+    <h4>Wat meet Hb?</h4>
+    <p>
+      Hemoglobine is het zuurstofbindende eiwit in rode bloedcellen.
+      Een verlaagd Hb betekent dat het zuurstoftransport is verminderd.
+    </p>
+
+    <h4>Eerste vraag: waarom is het Hb laag?</h4>
+    <ul>
+      <li>Is er bloedverlies?</li>
+      <li>Is de aanmaak verminderd?</li>
+      <li>Is er verhoogde afbraak (hemolyse)?</li>
+    </ul>
+
+    <h4>Indeling op basis van MCV</h4>
+    <ul>
+      <li><strong>Microcytair</strong>: vaak ijzergebrek</li>
+      <li><strong>Normocytair</strong>: chronische ziekte, nierfalen</li>
+      <li><strong>Macrocytair</strong>: vitamine B12- of foliumzuurtekort</li>
+    </ul>
+
+    <h4>Belangrijk aanvullend lab</h4>
+    <ul>
+      <li>Ferritine (ijzervoorraad)</li>
+      <li>Vitamine B12 en foliumzuur</li>
+      <li>Reticulocyten (aanmaak)</li>
+    </ul>
+
+    <h4>Behandeling in grote lijnen</h4>
+    <ul>
+      <li>
+        <strong>IJzergebrek</strong>:
+        ferrofumaraat 200 mg 1×/dag
+      </li>
+      <li>
+        <strong>Vitamine B12-tekort</strong>:
+        cyanocobalamine 1 mg 1×/dag
+      </li>
+      <li>
+        <strong>Foliumzuurtekort</strong>:
+        foliumzuur 1 mg 1×/dag
+      </li>
+    </ul>
+
   </div>
 </div>
 
+<!-- ================= Trombocyten ================= -->
 <div class="test">
   <div class="test-header" onclick="toggleTest(this.parentElement)">
     <span>Trombocyten</span>
-    <span class="test-value">Laag / hoog</span>
+    <span class="test-value">Laag of hoog</span>
   </div>
+
   <div class="test-content">
-    <p>Trombocytopenie vs trombocytose: denk aan oorzaak en kliniek.</p>
+
+    <h4>Functie van trombocyten</h4>
+    <p>
+      Trombocyten zijn essentieel voor de primaire hemostase.
+      Afwijkingen geven risico op bloedingen of trombose.
+    </p>
+
+    <h4>Trombocytopenie (laag)</h4>
+    <ul>
+      <li>Verminderde productie (beenmerg)</li>
+      <li>Verhoogde afbraak (bijv. immuun)</li>
+      <li>Redistributie (vergrote milt)</li>
+    </ul>
+
+    <h4>Trombocytose (hoog)</h4>
+    <ul>
+      <li>Reactief (infectie, ontsteking, ijzergebrek)</li>
+      <li>Primair (myeloproliferatief)</li>
+    </ul>
+
+    <h4>Wanneer is het gevaarlijk?</h4>
+    <ul>
+      <li>&lt; 50 ×10⁹/L: bloedingsrisico</li>
+      <li>&gt; 1000 ×10⁹/L: tromboserisico</li>
+    </ul>
+
+    <h4>Wat vraag je aanvullend aan?</h4>
+    <ul>
+      <li>Volledig bloedbeeld</li>
+      <li>Vitamine B12 en foliumzuur</li>
+      <li>Ontstekingsparameters</li>
+    </ul>
+
   </div>
 </div>
 
+<!-- ================= Leukocyten ================= -->
 <div class="test">
   <div class="test-header" onclick="toggleTest(this.parentElement)">
     <span>Leukocyten</span>
-    <span class="test-value">Afwijkend</span>
+    <span class="test-value">Afwijkend aantal</span>
   </div>
+
   <div class="test-content">
-    <p>Let altijd op differentiatie (neutro-, lymfocyten).</p>
+
+    <h4>Wat zijn leukocyten?</h4>
+    <p>
+      Leukocyten zijn witte bloedcellen en spelen een rol in de afweer.
+      Ze bestaan uit verschillende subtypen met elk een eigen functie.
+    </p>
+
+    <h4>Leukocytose (hoog)</h4>
+    <ul>
+      <li>Vaak bij infectie of stress</li>
+      <li>Kan wijzen op hematologische maligniteit</li>
+    </ul>
+
+    <h4>Leukopenie (laag)</h4>
+    <ul>
+      <li>Medicatie (bijv. cytostatica)</li>
+      <li>Virale infecties</li>
+      <li>Beenmergproblematiek</li>
+    </ul>
+
+    <h4>Waarom is differentiatie belangrijk?</h4>
+    <p>
+      Het subtype (neutrofielen, lymfocyten, eosinofielen)
+      bepaalt de waarschijnlijkste oorzaak.
+    </p>
+
+    <h4>Alarmsituaties</h4>
+    <ul>
+      <li>Neutropenie &lt; 0,5 ×10⁹/L</li>
+      <li>Koorts bij neutropenie</li>
+      <li>Zeer hoge leukocytenwaarden</li>
+    </ul>
+
   </div>
 </div>
 
