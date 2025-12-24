@@ -19,12 +19,13 @@
 
 <main>
 
+<h1>Doktersassistent</h1>
+
 <div class="toggle-bar">
   <button onclick="closeAll()">Korte weergave</button>
   <button onclick="openAll()">Uitgebreide weergave</button>
 </div>
 
-<!-- Hb -->
 <div class="test">
   <div class="test-header" onclick="toggleTest(this.parentElement)">
     <span>Hb</span>
@@ -32,13 +33,13 @@
   </div>
   <div class="test-content">
     <h4>Wanneer vandaag actie?</h4>
-    <p>Bij duidelijke klachten, tekenen van bloeding of zwarte ontlasting.</p>
+    <p>Bij klachten, tekenen van bloeding of zwarte ontlasting → overleg arts.</p>
 
     <h4>Vragen</h4>
     <ul>
       <li>Hevig menstrueel bloedverlies?</li>
-      <li>Dieet (vegetarisch/veganistisch)?</li>
-      <li>Buikpijn, gewichtsverlies, veranderd ontlastingspatroon?</li>
+      <li>Vegetarisch/veganistisch dieet?</li>
+      <li>Buikklachten of gewichtsverlies?</li>
     </ul>
 
     <h4>Aanvullend onderzoek</h4>
@@ -47,17 +48,16 @@
       <li>Ferritine</li>
     </ul>
 
-    <h4>Beleid (samengevat)</h4>
+    <h4>Beleid</h4>
     <ul>
-      <li>Ijzergebrek: ferrofumaraat 200 mg 1×/dag</li>
-      <li>Na herstel Hb: 2–3 maanden voortzetten</li>
-      <li>Vitamine B12-tekort: cyanocobalamine 1 mg 1×/dag oraal</li>
-      <li>Foliumzuurtekort: foliumzuur 1 mg 1×/dag</li>
+      <li>Ferrofumaraat 200 mg 1×/dag</li>
+      <li>Na normalisatie Hb: 2–3 maanden voortzetten</li>
+      <li>Vitamine B12: 1 mg 1×/dag oraal</li>
+      <li>Foliumzuur: 1 mg 1×/dag</li>
     </ul>
   </div>
 </div>
 
-<!-- Trombocyten -->
 <div class="test">
   <div class="test-header" onclick="toggleTest(this.parentElement)">
     <span>Trombocyten</span>
@@ -65,12 +65,12 @@
   </div>
   <div class="test-content">
     <h4>Wanneer spoed?</h4>
-    <p>Bij bloedingsneiging (petechiën, hematomen, bloedneuzen).</p>
+    <p>Bloedingsneiging → direct overleg arts.</p>
 
     <h4>Vragen</h4>
     <ul>
       <li>Recente infectie?</li>
-      <li>Medicatie (bijv. heparine, antibiotica)?</li>
+      <li>Medicatiegebruik?</li>
     </ul>
 
     <h4>Aanvullend onderzoek</h4>
@@ -79,33 +79,20 @@
       <li>Leukocyten + differentiatie</li>
       <li>Vitamine B12, foliumzuur</li>
     </ul>
-
-    <h4>Beleid</h4>
-    <p>Overleg arts bij afwijking; bij bekende stabiele oorzaak vaak expectatief.</p>
   </div>
 </div>
 
-<!-- Leukocyten -->
 <div class="test">
   <div class="test-header" onclick="toggleTest(this.parentElement)">
     <span>Leukocyten</span>
-    <span class="test-value">↑ &gt; 12 / ↓ &lt; 4 ×10⁹/L</span>
+    <span class="test-value">↑ &gt;12 / ↓ &lt;4 ×10⁹/L</span>
   </div>
   <div class="test-content">
     <h4>Interpretatie</h4>
-    <p>Lichte afwijkingen zonder ziekteverschijnselen zijn vaak reactief.</p>
+    <p>Vaak reactief bij infectie of stress.</p>
 
-    <h4>Wanneer overleg?</h4>
-    <ul>
-      <li>Ernstig ziek beeld</li>
-      <li>Persisterende afwijkingen</li>
-    </ul>
-
-    <h4>Aanvullend onderzoek</h4>
-    <ul>
-      <li>Differentiatie leukocyten</li>
-      <li>CRP</li>
-    </ul>
+    <h4>Actie</h4>
+    <p>Bij ernstig ziek beeld of persisterende afwijking → overleg arts.</p>
   </div>
 </div>
 
