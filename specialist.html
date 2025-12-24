@@ -19,47 +19,178 @@
 
 <main>
 
-<h1>Specialist</h1>
+<h1>Specialist – Labuitslagen</h1>
 
 <div class="toggle-bar">
   <button onclick="closeAll()">Korte weergave</button>
   <button onclick="openAll()">Uitgebreide weergave</button>
 </div>
 
+<!-- ================= Hb ================= -->
 <div class="test">
   <div class="test-header" onclick="toggleTest(this.parentElement)">
     <span>Hb</span>
-    <span class="test-value">&lt;6,0 mmol/L</span>
+    <span class="test-value">&lt; 6,0 mmol/L</span>
   </div>
+
   <div class="test-content">
-    <h4>Beleid</h4>
-    <p>Overweeg transfusie afhankelijk van kliniek en comorbiditeit.</p>
+
+    <h4>Stap 1 – Urgentiebeoordeling</h4>
+    <ul>
+      <li>Hemodynamische instabiliteit</li>
+      <li>Symptomatische anemie (dyspneu, thoracale pijn, syncope)</li>
+      <li>Hb &lt; 5,0 mmol/L</li>
+      <li>Actieve bloeding</li>
+    </ul>
+
+    <h4>Stap 2 – Etiologische analyse</h4>
+    <ul>
+      <li>Bloedverlies (acuut of chronisch)</li>
+      <li>Productiestoornis (beenmerg, nutriëntdeficiënties)</li>
+      <li>Hemolyse</li>
+      <li>Verdunningsanemie</li>
+    </ul>
+
+    <h4>Stap 3 – Uitgebreid laboratoriumonderzoek</h4>
+    <ul>
+      <li>Volledig bloedbeeld + reticulocyten</li>
+      <li>MCV, RDW</li>
+      <li>Ferritine, ijzer, transferrine, saturatie</li>
+      <li>Vitamine B12, foliumzuur</li>
+      <li>LDH, haptoglobine, bilirubine</li>
+      <li>CRP/BSE</li>
+      <li>Nierfunctie en leverenzymen</li>
+    </ul>
+
+    <h4>Stap 4 – Aanvullende diagnostiek (indien geïndiceerd)</h4>
+    <ul>
+      <li>Beenmergonderzoek bij onbegrepen cytopenieën</li>
+      <li>Endoscopie bij verdenking GI-bloeding</li>
+      <li>Beeldvorming (CT/echo) bij maligniteitsverdenking</li>
+    </ul>
+
+    <h4>Stap 5 – Beleid</h4>
+    <ul>
+      <li>
+        <strong>Erytrocytentransfusie</strong>:
+        bij symptomatische anemie of Hb &lt; 5,0 mmol/L,
+        individueel afwegen bij cardiovasculaire comorbiditeit
+      </li>
+      <li>
+        <strong>IJzersuppletie</strong>:
+        oraal of intraveneus afhankelijk van absorptie en tolerantie
+      </li>
+      <li>
+        <strong>Vitamine B12</strong>:
+        oraal 1 mg/dag of parenteraal bij malabsorptie
+      </li>
+      <li>
+        <strong>Foliumzuur</strong>:
+        1 mg/dag
+      </li>
+    </ul>
+
   </div>
 </div>
 
+<!-- ================= Trombocyten ================= -->
 <div class="test">
   <div class="test-header" onclick="toggleTest(this.parentElement)">
     <span>Trombocyten</span>
-    <span class="test-value">Ernstig afwijkend</span>
+    <span class="test-value">↓ &lt; 50 / ↑ &gt; 1000 ×10⁹/L</span>
   </div>
+
   <div class="test-content">
-    <h4>Differentiaaldiagnose</h4>
-    <p>Denk aan ITP, beenmergpathologie of reactieve oorzaken.</p>
+
+    <h4>Stap 1 – Urgentie</h4>
+    <ul>
+      <li>Actieve bloedingen</li>
+      <li>Trombocyten &lt; 20 ×10⁹/L</li>
+      <li>Neurologische symptomen</li>
+    </ul>
+
+    <h4>Stap 2 – Classificatie</h4>
+    <ul>
+      <li>Verminderde productie</li>
+      <li>Verhoogde afbraak (immuun/non-immuun)</li>
+      <li>Redistributie (hypersplenisme)</li>
+      <li>Reactieve trombocytose</li>
+    </ul>
+
+    <h4>Stap 3 – Diagnostiek</h4>
+    <ul>
+      <li>Volledig bloedbeeld + uitstrijk</li>
+      <li>Vitamine B12 en foliumzuur</li>
+      <li>Lever- en nierfunctie</li>
+      <li>TSH</li>
+      <li>Serologie bij verdenking infectieuze oorzaak</li>
+    </ul>
+
+    <h4>Stap 4 – Specifiek beleid</h4>
+    <ul>
+      <li>
+        <strong>ITP</strong>:
+        expectatief of corticosteroïden bij bloedingen
+      </li>
+      <li>
+        <strong>Reactieve trombocytose</strong>:
+        behandeling onderliggende oorzaak
+      </li>
+      <li>
+        <strong>Beenmergpathologie</strong>:
+        verwijzing hematologie, overweeg beenmergbiopsie
+      </li>
+    </ul>
+
   </div>
 </div>
 
+<!-- ================= Leukocyten ================= -->
 <div class="test">
   <div class="test-header" onclick="toggleTest(this.parentElement)">
     <span>Leukocyten</span>
-    <span class="test-value">Sterk verhoogd/verlaagd</span>
+    <span class="test-value">↑ &gt; 12 / ↓ &lt; 4 ×10⁹/L</span>
   </div>
+
   <div class="test-content">
-    <h4>Actie</h4>
-    <p>Bij verdenking hematologische maligniteit → spoed diagnostiek.</p>
+
+    <h4>Stap 1 – Urgentie</h4>
+    <ul>
+      <li>Leukocyten &gt; 50 ×10⁹/L</li>
+      <li>Neutropenie &lt; 0,5 ×10⁹/L</li>
+      <li>Koorts bij neutropenie</li>
+    </ul>
+
+    <h4>Stap 2 – Differentiële beoordeling</h4>
+    <ul>
+      <li>Reactief (infectie, stress, medicatie)</li>
+      <li>Primair hematologisch</li>
+      <li>Inflammatoir of maligniteit</li>
+    </ul>
+
+    <h4>Stap 3 – Diagnostiek</h4>
+    <ul>
+      <li>Leukocyten differentiatie</li>
+      <li>Perifeer bloeduitstrijkje</li>
+      <li>CRP/BSE</li>
+      <li>Beenmergonderzoek bij persisterende afwijkingen</li>
+    </ul>
+
+    <h4>Stap 4 – Beleid</h4>
+    <ul>
+      <li>
+        <strong>Febriele neutropenie</strong>:
+        directe opname en intraveneuze antibiotica
+      </li>
+      <li>
+        <strong>Chronische leukocytose</strong>:
+        verdere hematologische analyse
+      </li>
+    </ul>
+
   </div>
 </div>
 
 </main>
 </body>
 </html>
-
