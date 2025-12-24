@@ -1,54 +1,77 @@
 <!DOCTYPE html>
 <html lang="nl">
 <head>
-    <meta charset="UTF-8">
-    <title>Huisarts</title>
-    <link rel="stylesheet" href="css/style.css">
+  <meta charset="UTF-8">
+  <title>Huisarts</title>
+  <link rel="stylesheet" href="css/style.css">
+  <script src="js/app.js" defer></script>
 </head>
 <body>
 
-<nav class="menu">
+<header>
+  <nav>
     <a href="doktersassistent.html">Doktersassistent</a>
     <a href="huisarts.html" class="active">Huisarts</a>
     <a href="specialist.html">Specialist</a>
     <a href="student.html">Student</a>
-</nav>
-
-<div class="view-toggle">
-    <button onclick="collapseAll()">Korte weergave</button>
-    <button onclick="expandAll()">Uitgebreide weergave</button>
-</div>
+  </nav>
+</header>
 
 <main>
 
-    <!-- TEST 1 -->
-    <div class="test">
-        <button class="test-header" onclick="toggle(this)">
-            HbA1c
-            <span class="value">53 mmol/mol ⚠</span>
-        </button>
-        <div class="test-content">
-            <p><strong>Indicatie:</strong> Diabetescontrole</p>
-            <p><strong>Actie nodig:</strong> Ja</p>
-            <p><strong>Toelichting:</strong> Verhoogde waarde volgens NHG-standaard.</p>
-        </div>
-    </div>
+<h1>Huisarts</h1>
 
-    <!-- TEST 2 -->
-    <div class="test">
-        <button class="test-header" onclick="toggle(this)">
-            Cholesterol
-            <span class="value">4.8 mmol/L ✓</span>
-        </button>
-        <div class="test-content">
-            <p><strong>Indicatie:</strong> Cardiovasculair risico</p>
-            <p><strong>Actie nodig:</strong> Nee</p>
-            <p><strong>Toelichting:</strong> Binnen referentiewaarden.</p>
-        </div>
-    </div>
+<div class="toggle-bar">
+  <button onclick="closeAll()">Korte weergave</button>
+  <button onclick="openAll()">Uitgebreide weergave</button>
+</div>
+
+<div class="test">
+  <div class="test-header" onclick="toggleTest(this.parentElement)">
+    <span>Hb</span>
+    <span class="test-value">↓ &lt; 6,0 mmol/L</span>
+  </div>
+  <div class="test-content">
+    <h4>Anamnese & LO</h4>
+    <p>Let op GI-klachten, gewichtsverlies, tekenen van maligniteit.</p>
+
+    <h4>Diagnostiek</h4>
+    <ul>
+      <li>MCV, ferritine</li>
+      <li>IJzer, transferrine</li>
+      <li>Vitamine B12, foliumzuur</li>
+    </ul>
+
+    <h4>Beleid</h4>
+    <ul>
+      <li>IJzergebrek: ferrofumaraat 200 mg 1×/dag</li>
+      <li>Overweeg endoscopie bij ≥50 jaar</li>
+    </ul>
+  </div>
+</div>
+
+<div class="test">
+  <div class="test-header" onclick="toggleTest(this.parentElement)">
+    <span>Trombocyten</span>
+    <span class="test-value">&lt;50 of &gt;1000 ×10⁹/L</span>
+  </div>
+  <div class="test-content">
+    <h4>Beleid</h4>
+    <p>Bij &lt;50 of bloedingsneiging → spoedverwijzing internist.</p>
+  </div>
+</div>
+
+<div class="test">
+  <div class="test-header" onclick="toggleTest(this.parentElement)">
+    <span>Leukocyten</span>
+    <span class="test-value">&gt;12 / &lt;4 ×10⁹/L</span>
+  </div>
+  <div class="test-content">
+    <h4>Overweging</h4>
+    <p>Denk aan infectie, inflammatie of hematologische oorzaak.</p>
+  </div>
+</div>
 
 </main>
-
-<script src="js/script.js"></script>
 </body>
 </html>
