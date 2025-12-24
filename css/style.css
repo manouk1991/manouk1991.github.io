@@ -2,7 +2,6 @@ body {
   font-family: system-ui, sans-serif;
   margin: 0;
   background: #f6f8fa;
-  color: #222;
 }
 
 header {
@@ -10,45 +9,37 @@ header {
   padding: 12px;
 }
 
-nav {
-  display: flex;
-  gap: 10px;
-}
-
 nav a {
   color: white;
+  margin-right: 10px;
   text-decoration: none;
-  padding: 8px 14px;
+  padding: 6px 12px;
   border-radius: 6px;
-  background: rgba(255,255,255,0.2);
 }
 
 nav a.active {
   background: #ffc107;
-  color: #000;
-  font-weight: 600;
+  color: black;
 }
 
 main {
-  padding: 20px;
   max-width: 900px;
   margin: auto;
+  padding: 20px;
+}
+
+.center {
+  text-align: center;
 }
 
 .toggle-bar {
   margin-bottom: 20px;
 }
 
-.toggle-bar button {
-  margin-right: 10px;
-  padding: 6px 12px;
-  cursor: pointer;
-}
-
 .test {
   background: white;
   border-radius: 8px;
-  margin-bottom: 16px;
+  margin-bottom: 15px;
   border-left: 6px solid #0b5ed7;
 }
 
@@ -59,10 +50,6 @@ main {
   cursor: pointer;
 }
 
-.test-value {
-  font-weight: bold;
-}
-
 .test-content {
   display: none;
   padding: 12px;
@@ -71,4 +58,8 @@ main {
 
 .test.open .test-content {
   display: block;
+}
+
+.test-value {
+  font-weight: bold;
 }
