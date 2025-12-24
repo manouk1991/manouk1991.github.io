@@ -1,49 +1,61 @@
 <!DOCTYPE html>
 <html lang="nl">
 <head>
-    <meta charset="UTF-8">
-    <title>Student</title>
-    <link rel="stylesheet" href="css/style.css">
+  <meta charset="UTF-8">
+  <title>Student</title>
+  <link rel="stylesheet" href="css/style.css">
+  <script src="js/app.js" defer></script>
 </head>
 <body>
 
-<nav class="menu">
+<header>
+  <nav>
     <a href="doktersassistent.html">Doktersassistent</a>
     <a href="huisarts.html">Huisarts</a>
     <a href="specialist.html">Specialist</a>
     <a href="student.html" class="active">Student</a>
-</nav>
-
-<div class="view-toggle">
-    <button onclick="collapseAll()">Korte weergave</button>
-    <button onclick="expandAll()">Uitgebreide weergave</button>
-</div>
+  </nav>
+</header>
 
 <main>
 
-    <div class="test">
-        <button class="test-header" onclick="toggle(this)">
-            Casus 1 – Anemie
-            <span class="value">Hb 6.5 ⚠</span>
-        </button>
-        <div class="test-content">
-            <p><strong>Vraag:</strong> Waarschijnlijke diagnose?</p>
-            <p><strong>Hint:</strong> MCV verlaagd</p>
-        </div>
-    </div>
+<h1>Student</h1>
 
-    <div class="test">
-        <button class="test-header" onclick="toggle(this)">
-            Casus 2 – Infectie
-            <span class="value">CRP 8 ✓</span>
-        </button>
-        <div class="test-content">
-            <p><strong>Interpretatie:</strong> Geen bacteriële infectie</p>
-        </div>
-    </div>
+<div class="toggle-bar">
+  <button onclick="closeAll()">Korte weergave</button>
+  <button onclick="openAll()">Uitgebreide weergave</button>
+</div>
+
+<div class="test">
+  <div class="test-header" onclick="toggleTest(this.parentElement)">
+    <span>Hb</span>
+    <span class="test-value">Anemie</span>
+  </div>
+  <div class="test-content">
+    <p>Anemie kan micro-, normo- of macrocytair zijn.</p>
+  </div>
+</div>
+
+<div class="test">
+  <div class="test-header" onclick="toggleTest(this.parentElement)">
+    <span>Trombocyten</span>
+    <span class="test-value">Laag / hoog</span>
+  </div>
+  <div class="test-content">
+    <p>Trombocytopenie vs trombocytose: denk aan oorzaak en kliniek.</p>
+  </div>
+</div>
+
+<div class="test">
+  <div class="test-header" onclick="toggleTest(this.parentElement)">
+    <span>Leukocyten</span>
+    <span class="test-value">Afwijkend</span>
+  </div>
+  <div class="test-content">
+    <p>Let altijd op differentiatie (neutro-, lymfocyten).</p>
+  </div>
+</div>
 
 </main>
-
-<script src="js/script.js"></script>
 </body>
 </html>
