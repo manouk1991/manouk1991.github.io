@@ -1,50 +1,114 @@
 <!DOCTYPE html>
 <html lang="nl">
 <head>
-    <meta charset="UTF-8">
-    <title>Doktersassistent</title>
-    <link rel="stylesheet" href="css/style.css">
+  <meta charset="UTF-8">
+  <title>Doktersassistent</title>
+  <link rel="stylesheet" href="css/style.css">
+  <script src="js/app.js" defer></script>
 </head>
 <body>
 
-<nav class="menu">
+<header>
+  <nav>
     <a href="doktersassistent.html" class="active">Doktersassistent</a>
     <a href="huisarts.html">Huisarts</a>
     <a href="specialist.html">Specialist</a>
     <a href="student.html">Student</a>
-</nav>
-
-<div class="view-toggle">
-    <button onclick="collapseAll()">Korte weergave</button>
-    <button onclick="expandAll()">Uitgebreide weergave</button>
-</div>
+  </nav>
+</header>
 
 <main>
 
-    <div class="test">
-        <button class="test-header" onclick="toggle(this)">
-            Bloeddruk
-            <span class="value">140/90 ⚠</span>
-        </button>
-        <div class="test-content">
-            <p><strong>Actie:</strong> Arts informeren</p>
-            <p><strong>Toelichting:</strong> Boven streefwaarde.</p>
-        </div>
-    </div>
+<div class="toggle-bar">
+  <button onclick="closeAll()">Korte weergave</button>
+  <button onclick="openAll()">Uitgebreide weergave</button>
+</div>
 
-    <div class="test">
-        <button class="test-header" onclick="toggle(this)">
-            Pols
-            <span class="value">72 /min ✓</span>
-        </button>
-        <div class="test-content">
-            <p><strong>Actie:</strong> Geen</p>
-            <p><strong>Toelichting:</strong> Normale waarde.</p>
-        </div>
-    </div>
+<!-- Hb -->
+<div class="test">
+  <div class="test-header" onclick="toggleTest(this.parentElement)">
+    <span>Hb</span>
+    <span class="test-value">↓ &lt; 6,0 mmol/L</span>
+  </div>
+  <div class="test-content">
+    <h4>Wanneer vandaag actie?</h4>
+    <p>Bij duidelijke klachten, tekenen van bloeding of zwarte ontlasting.</p>
+
+    <h4>Vragen</h4>
+    <ul>
+      <li>Hevig menstrueel bloedverlies?</li>
+      <li>Dieet (vegetarisch/veganistisch)?</li>
+      <li>Buikpijn, gewichtsverlies, veranderd ontlastingspatroon?</li>
+    </ul>
+
+    <h4>Aanvullend onderzoek</h4>
+    <ul>
+      <li>MCV</li>
+      <li>Ferritine</li>
+    </ul>
+
+    <h4>Beleid (samengevat)</h4>
+    <ul>
+      <li>Ijzergebrek: ferrofumaraat 200 mg 1×/dag</li>
+      <li>Na herstel Hb: 2–3 maanden voortzetten</li>
+      <li>Vitamine B12-tekort: cyanocobalamine 1 mg 1×/dag oraal</li>
+      <li>Foliumzuurtekort: foliumzuur 1 mg 1×/dag</li>
+    </ul>
+  </div>
+</div>
+
+<!-- Trombocyten -->
+<div class="test">
+  <div class="test-header" onclick="toggleTest(this.parentElement)">
+    <span>Trombocyten</span>
+    <span class="test-value">↓ &lt; 50 ×10⁹/L</span>
+  </div>
+  <div class="test-content">
+    <h4>Wanneer spoed?</h4>
+    <p>Bij bloedingsneiging (petechiën, hematomen, bloedneuzen).</p>
+
+    <h4>Vragen</h4>
+    <ul>
+      <li>Recente infectie?</li>
+      <li>Medicatie (bijv. heparine, antibiotica)?</li>
+    </ul>
+
+    <h4>Aanvullend onderzoek</h4>
+    <ul>
+      <li>Hb, MCV</li>
+      <li>Leukocyten + differentiatie</li>
+      <li>Vitamine B12, foliumzuur</li>
+    </ul>
+
+    <h4>Beleid</h4>
+    <p>Overleg arts bij afwijking; bij bekende stabiele oorzaak vaak expectatief.</p>
+  </div>
+</div>
+
+<!-- Leukocyten -->
+<div class="test">
+  <div class="test-header" onclick="toggleTest(this.parentElement)">
+    <span>Leukocyten</span>
+    <span class="test-value">↑ &gt; 12 / ↓ &lt; 4 ×10⁹/L</span>
+  </div>
+  <div class="test-content">
+    <h4>Interpretatie</h4>
+    <p>Lichte afwijkingen zonder ziekteverschijnselen zijn vaak reactief.</p>
+
+    <h4>Wanneer overleg?</h4>
+    <ul>
+      <li>Ernstig ziek beeld</li>
+      <li>Persisterende afwijkingen</li>
+    </ul>
+
+    <h4>Aanvullend onderzoek</h4>
+    <ul>
+      <li>Differentiatie leukocyten</li>
+      <li>CRP</li>
+    </ul>
+  </div>
+</div>
 
 </main>
-
-<script src="js/script.js"></script>
 </body>
 </html>
