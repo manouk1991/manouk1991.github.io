@@ -19,80 +19,158 @@
 
 <main>
 
-<h1>Doktersassistent</h1>
+<h1>Doktersassistent – Labuitslagen</h1>
 
 <div class="toggle-bar">
   <button onclick="closeAll()">Korte weergave</button>
   <button onclick="openAll()">Uitgebreide weergave</button>
 </div>
 
+<!-- ================= Hb ================= -->
 <div class="test">
   <div class="test-header" onclick="toggleTest(this.parentElement)">
     <span>Hb</span>
     <span class="test-value">↓ &lt; 6,0 mmol/L</span>
   </div>
-  <div class="test-content">
-    <h4>Wanneer vandaag actie?</h4>
-    <p>Bij klachten, tekenen van bloeding of zwarte ontlasting → overleg arts.</p>
 
-    <h4>Vragen</h4>
+  <div class="test-content">
+
+    <h4>Stap 1 – Wanneer moet de arts er vandaag naar kijken?</h4>
     <ul>
-      <li>Hevig menstrueel bloedverlies?</li>
-      <li>Vegetarisch/veganistisch dieet?</li>
-      <li>Buikklachten of gewichtsverlies?</li>
+      <li>Hb &lt; 6,0 mmol/L met klachten</li>
+      <li>Tekenen van actieve bloeding</li>
+      <li>Zwarte ontlasting of bloedbraken</li>
     </ul>
 
-    <h4>Aanvullend onderzoek</h4>
+    <h4>Stap 2 – Vragen</h4>
+    <strong>Vrouwen</strong>
+    <ul>
+      <li>Hevig menstrueel bloedverlies?</li>
+    </ul>
+
+    <strong>Kinderen</strong>
+    <ul>
+      <li>Recent (afgelopen maand) infectie doorgemaakt?</li>
+    </ul>
+
+    <strong>Overig (indien bovenstaande niet van toepassing)</strong>
+    <ul>
+      <li>Vegetarisch of veganistisch dieet?</li>
+      <li>Recent ziekenhuisopname of ingreep?</li>
+      <li>Veranderd ontlastingspatroon?</li>
+      <li>Buikpijn?</li>
+      <li>Onbedoeld gewichtsverlies?</li>
+      <li>Bloed of zwarte verkleuring van ontlasting of braaksel?</li>
+      <li>Kan zwarte ontlasting verklaard worden door voeding of supplementen (bijv. drop, bessen, spinazie, ijzer)?</li>
+    </ul>
+
+    <h4>Stap 3 – Minimaal aanvullend onderzoek</h4>
     <ul>
       <li>MCV</li>
       <li>Ferritine</li>
     </ul>
 
-    <h4>Beleid</h4>
+    <h4>Bij normaal of verhoogd MCV aanvullend</h4>
     <ul>
-      <li>Ferrofumaraat 200 mg 1×/dag</li>
-      <li>Na normalisatie Hb: 2–3 maanden voortzetten</li>
-      <li>Vitamine B12: 1 mg 1×/dag oraal</li>
-      <li>Foliumzuur: 1 mg 1×/dag</li>
+      <li>BSE</li>
+      <li>Volledig bloedbeeld</li>
+      <li>LDH</li>
+      <li>IJzer, transferrine en transferrinesaturatie</li>
+      <li>eGFR en kreatinine</li>
+      <li>Vitamine B12</li>
+      <li>Foliumzuur</li>
     </ul>
+
+    <h4>Stap 4 – Beleid (samengevat)</h4>
+    <ul>
+      <li><strong>IJzergebreksanemie</strong>: ferrofumaraat 200 mg 1×/dag</li>
+      <li>Na normalisatie Hb: behandeling 2–3 maanden voortzetten</li>
+      <li>Bij menstruatie-gerelateerde oorzaak: overweeg structurele suppletie of anticonceptie</li>
+      <li><strong>Vitamine B12-tekort</strong>: cyanocobalamine 1 mg 1×/dag oraal</li>
+      <li><strong>Foliumzuurtekort</strong>: foliumzuur 1 mg 1×/dag</li>
+    </ul>
+
   </div>
 </div>
 
+<!-- ================= Trombocyten ================= -->
 <div class="test">
   <div class="test-header" onclick="toggleTest(this.parentElement)">
     <span>Trombocyten</span>
     <span class="test-value">↓ &lt; 50 ×10⁹/L</span>
   </div>
+
   <div class="test-content">
+
     <h4>Wanneer spoed?</h4>
-    <p>Bloedingsneiging → direct overleg arts.</p>
+    <ul>
+      <li>Trombocyten &lt; 50 ×10⁹/L én bloedingsneiging</li>
+    </ul>
 
     <h4>Vragen</h4>
     <ul>
-      <li>Recente infectie?</li>
-      <li>Medicatiegebruik?</li>
+      <li>Recent ziek geweest?</li>
+      <li>Regelmatig bloedneuzen of blauwe plekken?</li>
+      <li>Stollingsziekten in de familie?</li>
+      <li>Vegetarisch/veganistisch dieet?</li>
     </ul>
 
-    <h4>Aanvullend onderzoek</h4>
+    <h4>Dossiercontrole</h4>
     <ul>
-      <li>Hb, MCV</li>
-      <li>Leukocyten + differentiatie</li>
-      <li>Vitamine B12, foliumzuur</li>
+      <li>Medicatie: quinidine, goud, cotrimoxazol, LMWH</li>
     </ul>
+
+    <h4>Aanvullend onderzoek (indien arts wenst)</h4>
+    <ul>
+      <li>Hb</li>
+      <li>MCV</li>
+      <li>Leukocyten + differentiatie</li>
+      <li>Vitamine B12</li>
+      <li>Foliumzuur</li>
+      <li>Nierfunctie</li>
+      <li>TSH</li>
+    </ul>
+
+    <h4>Beleid</h4>
+    <p>
+      Bij afwijkende trombocyten zonder bekende oorzaak: overleg arts en
+      vaak verwijzing internist.  
+      Bij bekende stabiele oorzaak: vaak expectatief.
+    </p>
+
   </div>
 </div>
 
+<!-- ================= Leukocyten ================= -->
 <div class="test">
   <div class="test-header" onclick="toggleTest(this.parentElement)">
     <span>Leukocyten</span>
-    <span class="test-value">↑ &gt;12 / ↓ &lt;4 ×10⁹/L</span>
+    <span class="test-value">↑ &gt; 12 / ↓ &lt; 4 ×10⁹/L</span>
   </div>
-  <div class="test-content">
-    <h4>Interpretatie</h4>
-    <p>Vaak reactief bij infectie of stress.</p>
 
-    <h4>Actie</h4>
-    <p>Bij ernstig ziek beeld of persisterende afwijking → overleg arts.</p>
+  <div class="test-content">
+
+    <h4>Wanneer spoed?</h4>
+    <ul>
+      <li>Ernstig ziek beeld</li>
+      <li>Combinatie met andere afwijkende celijnen</li>
+    </ul>
+
+    <h4>Interpretatie</h4>
+    <p>
+      Afwijkingen zijn vaak reactief bij infectie, stress of inflammatie.
+      Persisterende afwijkingen vragen verdere evaluatie.
+    </p>
+
+    <h4>Aanvullend onderzoek</h4>
+    <ul>
+      <li>Leukocyten differentiatie</li>
+      <li>CRP</li>
+    </ul>
+
+    <h4>Beleid</h4>
+    <p>Bij twijfel of persisterende afwijking → overleg arts.</p>
+
   </div>
 </div>
 
