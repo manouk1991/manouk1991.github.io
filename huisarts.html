@@ -19,59 +19,73 @@
 
 <main>
 
-<h1>Huisarts</h1>
+<h1>Huisarts – Labuitslagen</h1>
 
 <div class="toggle-bar">
   <button onclick="closeAll()">Korte weergave</button>
   <button onclick="openAll()">Uitgebreide weergave</button>
 </div>
 
+<!-- ================= Hb ================= -->
 <div class="test">
   <div class="test-header" onclick="toggleTest(this.parentElement)">
     <span>Hb</span>
     <span class="test-value">↓ &lt; 6,0 mmol/L</span>
   </div>
-  <div class="test-content">
-    <h4>Anamnese & LO</h4>
-    <p>Let op GI-klachten, gewichtsverlies, tekenen van maligniteit.</p>
 
-    <h4>Diagnostiek</h4>
+  <div class="test-content">
+
+    <h4>Stap 1 – Vandaag mogelijk actie nodig</h4>
     <ul>
-      <li>MCV, ferritine</li>
-      <li>IJzer, transferrine</li>
-      <li>Vitamine B12, foliumzuur</li>
+      <li>Hb &lt; 6,0 mmol/L met klachten</li>
+      <li>Hb &lt; 5,0 mmol/L onafhankelijk van klachten</li>
+      <li>Tekenen van actieve bloeding</li>
     </ul>
 
-    <h4>Beleid</h4>
+    <h4>Stap 2 – Anamnese</h4>
+    <strong>Specifiek</strong>
     <ul>
-      <li>IJzergebrek: ferrofumaraat 200 mg 1×/dag</li>
-      <li>Overweeg endoscopie bij ≥50 jaar</li>
+      <li>Hevig menstrueel bloedverlies</li>
+      <li>Recent infectie (met name bij kinderen)</li>
     </ul>
-  </div>
-</div>
 
-<div class="test">
-  <div class="test-header" onclick="toggleTest(this.parentElement)">
-    <span>Trombocyten</span>
-    <span class="test-value">&lt;50 of &gt;1000 ×10⁹/L</span>
-  </div>
-  <div class="test-content">
-    <h4>Beleid</h4>
-    <p>Bij &lt;50 of bloedingsneiging → spoedverwijzing internist.</p>
-  </div>
-</div>
+    <strong>Algemeen</strong>
+    <ul>
+      <li>Dieet (vegetarisch/veganistisch)</li>
+      <li>Recente operatie of ziekenhuisopname</li>
+      <li>Verandering defecatiepatroon</li>
+      <li>Buikpijn</li>
+      <li>Onbedoeld gewichtsverlies</li>
+      <li>Melena of hematemesis</li>
+    </ul>
 
-<div class="test">
-  <div class="test-header" onclick="toggleTest(this.parentElement)">
-    <span>Leukocyten</span>
-    <span class="test-value">&gt;12 / &lt;4 ×10⁹/L</span>
-  </div>
-  <div class="test-content">
-    <h4>Overweging</h4>
-    <p>Denk aan infectie, inflammatie of hematologische oorzaak.</p>
-  </div>
-</div>
+    <h4>Stap 3 – Lichamelijk onderzoek</h4>
+    <ul>
+      <li>Bleekheid, icterus</li>
+      <li>Vergrote lymfeklieren</li>
+      <li>Hepato- of splenomegalie</li>
+      <li>Bij ≥50 jaar met anemie en buikklachten: inspectie, auscultatie en palpatie abdomen</li>
+      <li>Bij buikklachten: rectaal toucher</li>
+    </ul>
 
-</main>
-</body>
-</html>
+    <h4>Stap 4 – Aanvullend onderzoek</h4>
+    <strong>Minimaal</strong>
+    <ul>
+      <li>MCV</li>
+      <li>Ferritine</li>
+    </ul>
+
+    <strong>Bij normaal of verhoogd MCV</strong>
+    <ul>
+      <li>Volledig bloedbeeld</li>
+      <li>BSE en/of CRP</li>
+      <li>LDH</li>
+      <li>IJzer, transferrine, saturatie</li>
+      <li>Vitamine B12</li>
+      <li>Foliumzuur</li>
+      <li>eGFR en kreatinine</li>
+    </ul>
+
+    <h4>Stap 5 – Differentiaaldiagnose (samengevat)</h4>
+    <ul>
+      <li>
