@@ -1,18 +1,11 @@
-function toggle(button) {
-    const content = button.nextElementSibling;
-    content.style.display =
-        content.style.display === "block" ? "none" : "block";
+function toggleTest(el) {
+  el.classList.toggle("open");
 }
 
-function expandAll() {
-    document.querySelectorAll('.test-content').forEach(el => {
-        el.style.display = 'block';
-    });
+function openAll() {
+  document.querySelectorAll(".test").forEach(t => t.classList.add("open"));
 }
 
-function collapseAll() {
-    document.querySelectorAll('.test-content').forEach(el => {
-        el.style.display = 'none';
-    });
+function closeAll() {
+  document.querySelectorAll(".test").forEach(t => t.classList.remove("open"));
 }
-
