@@ -1,55 +1,19 @@
-body {
-  font-family: system-ui, sans-serif;
-  margin: 0;
-  background: #f6f8fa;
-}
-
-header {
-  background: #0b5ed7;
-  padding: 12px;
-}
-
-nav a {
-  color: white;
-  margin-right: 10px;
-  text-decoration: none;
-  padding: 6px 12px;
-  border-radius: 6px;
-}
-
-nav a.active {
-  background: #ffc107;
-  color: black;
-}
-
-main {
-  max-width: 900px;
-  margin: auto;
-  padding: 20px;
-}
-
-.center {
-  text-align: center;
-}
-
-.toggle-bar {
-  margin-bottom: 20px;
-}
-
+/* ===== Test header minimalistisch ===== */
 .test {
   background: white;
-  border-radius: 8px;
-  margin-bottom: 15px;
-  border-left: 6px solid #0b5ed7;
+  border-radius: 6px;
+  margin-bottom: 10px;
+  padding: 4px 8px;
+  border-left: 4px solid #0b5ed7;
 }
 
 .test-header {
-  padding: 12px;
   display: flex;
-  justify-content: space-between;
   align-items: center;
+  justify-content: space-between;
   cursor: pointer;
-  gap: 10px;
+  font-size: 0.95em;
+  padding: 6px;
 }
 
 .test-name {
@@ -57,18 +21,21 @@ main {
 }
 
 .unit {
-  font-size: 0.8em;
+  font-weight: normal;
   color: #666;
+  margin-left: 2px;
+  font-size: 0.85em;
 }
 
 .test-value {
   font-weight: bold;
-  white-space: nowrap;
+  margin-left: 10px;
 }
 
 .arrows {
   display: flex;
-  gap: 4px;
+  gap: 2px;
+  margin-left: 8px;
 }
 
 .arrows button {
@@ -76,72 +43,28 @@ main {
   background: transparent;
   cursor: pointer;
   font-size: 1em;
-  padding: 2px 4px;
+  padding: 0;
 }
 
 .arrows button:hover {
-  background: #e9ecef;
-  border-radius: 4px;
+  color: #0b5ed7;
 }
 
-/* Deelcontent (laag / hoog) */
-.test-content.low,
-.test-content.high {
+.test-content {
   display: none;
+  padding: 8px;
+  font-size: 0.9em;
+  border-top: 1px solid #ddd;
 }
 
-/* Als test open is */
 .test.open .test-content {
   display: block;
 }
 
-/* ===== Side-controls links ===== */
-.side-controls {
-  position: fixed;       /* blijft meescrollen */
-  top: 120px;            /* afstand van top header */
-  left: 20px;            /* afstand van linkerzijde */
-  display: flex;
-  flex-direction: column;
-  gap: 10px;
-  z-index: 1000;
-}
-
-.side-controls button {
-  padding: 10px;
-  font-size: 14px;
-  border-radius: 6px;
-  border: none;
-  background-color: #0b5ed7;
-  color: white;
-  cursor: pointer;
-  width: 130px;
-  text-align: center;
-}
-
-.side-controls button.active {
-  background-color: #ffc107;
-  color: black;
-}
-
 /* Reference range */
 .reference-range {
-  font-size: 0.85em;
+  font-size: 0.8em;
   color: #555;
-  padding: 0 12px 12px 12px;
-}
-
-/* Responsive kleine schermen */
-@media (max-width: 800px) {
-  .side-controls {
-    position: static;
-    flex-direction: row;
-    justify-content: center;
-    margin-bottom: 20px;
-    top: auto;
-    left: auto;
-  }
-
-  .side-controls button {
-    width: auto;
-  }
+  padding-left: 6px;
+  margin-bottom: 2px;
 }
