@@ -17,127 +17,74 @@
   </nav>
 </header>
 
-<main>
+<div class="side-controls">
+  <button onclick="scrollToTop()">↑</button>
+  <button class="toggle-btn active" onclick="setView('compact', this)">Korte weergave</button>
+  <button class="toggle-btn" onclick="setView('expanded', this)">Uitgebreide weergave</button>
+</div>
 
+<main>
 <h1>Student – Labuitslagen uitgelegd</h1>
 
-<!-- ===== Side controls ===== -->
-<div class="side-controls">
-  <button onclick="scrollToTop()" title="Naar boven">↑</button>
-  <button class="toggle-btn active" onclick="setView(this, 'compact')">
-    Korte<br>weergave
-  </button>
-  <button class="toggle-btn" onclick="setView(this, 'expanded')">
-    Uitgebreide<br>weergave
-  </button>
-</div>
-
-<!-- ================= Hb ================= -->
+<!-- Hb -->
 <div class="test">
-  <div class="test-header">
-    <span class="test-name">Hemoglobine (Hb) <span class="unit">(mmol/L)</span></span>
-    <span class="test-value">↓ Anemie</span>
-    <div class="arrows">
-      <button onclick="openSection(this, 'low')">↓</button>
-    </div>
+  <div class="test-header" onclick="toggleTest(this.parentElement)">
+    <span>
+      <span class="test-name">Hb</span>
+      <span class="unit">(mmol/L)</span>
+      <span class="test-value">&lt; 6,0</span>
+    </span>
+    <span class="arrows">
+      <button onclick="openSection(this,'low')">↓</button>
+    </span>
   </div>
   <div class="reference-range">Normaal: ♂ 8,5–11 | ♀ 7,5–10</div>
-
   <div class="test-content low">
-    <h4>Wat meet Hb?</h4>
-    <p>Hemoglobine is het zuurstofbindende eiwit in rode bloedcellen. Een verlaagd Hb betekent verminderd zuurstoftransport.</p>
-
-    <h4>Waarom is het Hb laag?</h4>
-    <ul>
-      <li>Bloedverlies</li>
-      <li>Verminderde aanmaak</li>
-      <li>Verhoogde afbraak (hemolyse)</li>
-    </ul>
-
-    <h4>Indeling op basis van MCV</h4>
-    <ul>
-      <li><strong>Microcytair</strong>: vaak ijzergebrek</li>
-      <li><strong>Normocytair</strong>: chronische ziekte, nierfalen</li>
-      <li><strong>Macrocytair</strong>: vitamine B12- of foliumzuurtekort</li>
-    </ul>
-
-    <h4>Belangrijk aanvullend lab</h4>
-    <ul>
-      <li>Ferritine (ijzervoorraad)</li>
-      <li>Vitamine B12 en foliumzuur</li>
-      <li>Reticulocyten (aanmaak)</li>
-    </ul>
-
-    <h4>Behandeling</h4>
-    <ul>
-      <li><strong>IJzergebrek</strong>: ferrofumaraat 200 mg 1×/dag</li>
-      <li><strong>Vitamine B12-tekort</strong>: cyanocobalamine 1 mg 1×/dag</li>
-      <li><strong>Foliumzuurtekort</strong>: foliumzuur 1 mg 1×/dag</li>
-    </ul>
+    <p>Verlaagd Hb: zuurstoftransport verminderd, controleer oorzaak.</p>
   </div>
 </div>
 
-<!-- ================= Trombocyten ================= -->
+<!-- Trombocyten -->
 <div class="test">
-  <div class="test-header">
-    <span class="test-name">Trombocyten</span>
-    <span class="test-value">Laag of hoog</span>
-    <div class="arrows">
-      <button onclick="openSection(this, 'low')">↓</button>
-      <button onclick="openSection(this, 'high')">↑</button>
-    </div>
+  <div class="test-header" onclick="toggleTest(this.parentElement)">
+    <span>
+      <span class="test-name">Trombocyten</span>
+      <span class="unit">(×10⁹/L)</span>
+      <span class="test-value">Laag / Hoog</span>
+    </span>
+    <span class="arrows">
+      <button onclick="openSection(this,'low')">↓</button>
+      <button onclick="openSection(this,'high')">↑</button>
+    </span>
   </div>
-  <div class="reference-range">Normaal: 150–400 ×10⁹/L</div>
-
+  <div class="reference-range">Normaal: 150–400</div>
   <div class="test-content low">
-    <h4>Laag (Trombocytopenie)</h4>
-    <ul>
-      <li>Verminderde productie (beenmerg)</li>
-      <li>Verhoogde afbraak (bijv. immuun)</li>
-      <li>Redistributie (vergrote milt)</li>
-      <li>Risico: bloedingen &lt; 50 ×10⁹/L</li>
-    </ul>
+    <p>Laag: bloedingsrisico, oorzaak controleren.</p>
   </div>
-
   <div class="test-content high">
-    <h4>Hoog (Trombocytose)</h4>
-    <ul>
-      <li>Reactief (infectie, ontsteking, ijzergebrek)</li>
-      <li>Primair (myeloproliferatief)</li>
-      <li>Risico: trombose &gt; 1000 ×10⁹/L</li>
-    </ul>
+    <p>Hoog: tromboserisico, vaak reactief.</p>
   </div>
 </div>
 
-<!-- ================= Leukocyten ================= -->
+<!-- Leukocyten -->
 <div class="test">
-  <div class="test-header">
-    <span class="test-name">Leukocyten</span>
-    <span class="test-value">Afwijkend aantal</span>
-    <div class="arrows">
-      <button onclick="openSection(this, 'low')">↓</button>
-      <button onclick="openSection(this, 'high')">↑</button>
-    </div>
+  <div class="test-header" onclick="toggleTest(this.parentElement)">
+    <span>
+      <span class="test-name">Leukocyten</span>
+      <span class="unit">(×10⁹/L)</span>
+      <span class="test-value">Afwijkend</span>
+    </span>
+    <span class="arrows">
+      <button onclick="openSection(this,'low')">↓</button>
+      <button onclick="openSection(this,'high')">↑</button>
+    </span>
   </div>
-  <div class="reference-range">Normaal: 4–12 ×10⁹/L</div>
-
+  <div class="reference-range">Normaal: 4–12</div>
   <div class="test-content low">
-    <h4>Laag (Leukopenie)</h4>
-    <ul>
-      <li>Medicatie (bijv. cytostatica)</li>
-      <li>Virale infecties</li>
-      <li>Beenmergproblematiek</li>
-      <li>Neutropenie &lt; 0,5 ×10⁹/L → alarm</li>
-    </ul>
+    <p>Laag: neutropenie, medicatie, infectie.</p>
   </div>
-
   <div class="test-content high">
-    <h4>Hoog (Leukocytose)</h4>
-    <ul>
-      <li>Vaak bij infectie of stress</li>
-      <li>Kan wijzen op hematologische maligniteit</li>
-      <li>Zeer hoge waarden → overleg arts</li>
-    </ul>
+    <p>Hoog: leukocytose door infectie, stress of hematologie.</p>
   </div>
 </div>
 
