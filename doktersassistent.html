@@ -21,10 +21,18 @@
 
 <h1>Doktersassistent – Labuitslagen</h1>
 
-<div class="toggle-bar">
-  <button onclick="closeAll()">Korte weergave</button>
-  <button onclick="openAll()">Uitgebreide weergave</button>
+<div class="side-controls">
+  <button onclick="scrollToTop()" title="Naar boven">↑</button>
+
+  <button class="toggle-btn active" onclick="setView('compact', this)">
+    Korte<br>weergave
+  </button>
+
+  <button class="toggle-btn" onclick="setView('expanded', this)">
+    Uitgebreide<br>weergave
+  </button>
 </div>
+
 
 <!-- ================= Hb ================= -->
 <div class="test">
