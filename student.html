@@ -21,31 +21,37 @@
 
 <h1>Student – Labuitslagen uitgelegd</h1>
 
-<div class="toggle-bar">
-  <button onclick="closeAll()">Korte weergave</button>
-  <button onclick="openAll()">Uitgebreide weergave</button>
+<!-- ===== Side controls ===== -->
+<div class="side-controls">
+  <button onclick="scrollToTop()" title="Naar boven">↑</button>
+  <button class="toggle-btn active" onclick="setView(this, 'compact')">
+    Korte<br>weergave
+  </button>
+  <button class="toggle-btn" onclick="setView(this, 'expanded')">
+    Uitgebreide<br>weergave
+  </button>
 </div>
 
 <!-- ================= Hb ================= -->
 <div class="test">
-  <div class="test-header" onclick="toggleTest(this.parentElement)">
-    <span>Hemoglobine (Hb)</span>
+  <div class="test-header">
+    <span class="test-name">Hemoglobine (Hb) <span class="unit">(mmol/L)</span></span>
     <span class="test-value">↓ Anemie</span>
+    <div class="arrows">
+      <button onclick="openSection(this, 'low')">↓</button>
+    </div>
   </div>
+  <div class="reference-range">Normaal: ♂ 8,5–11 | ♀ 7,5–10</div>
 
-  <div class="test-content">
-
+  <div class="test-content low">
     <h4>Wat meet Hb?</h4>
-    <p>
-      Hemoglobine is het zuurstofbindende eiwit in rode bloedcellen.
-      Een verlaagd Hb betekent dat het zuurstoftransport is verminderd.
-    </p>
+    <p>Hemoglobine is het zuurstofbindende eiwit in rode bloedcellen. Een verlaagd Hb betekent verminderd zuurstoftransport.</p>
 
-    <h4>Eerste vraag: waarom is het Hb laag?</h4>
+    <h4>Waarom is het Hb laag?</h4>
     <ul>
-      <li>Is er bloedverlies?</li>
-      <li>Is de aanmaak verminderd?</li>
-      <li>Is er verhoogde afbraak (hemolyse)?</li>
+      <li>Bloedverlies</li>
+      <li>Verminderde aanmaak</li>
+      <li>Verhoogde afbraak (hemolyse)</li>
     </ul>
 
     <h4>Indeling op basis van MCV</h4>
@@ -62,110 +68,76 @@
       <li>Reticulocyten (aanmaak)</li>
     </ul>
 
-    <h4>Behandeling in grote lijnen</h4>
+    <h4>Behandeling</h4>
     <ul>
-      <li>
-        <strong>IJzergebrek</strong>:
-        ferrofumaraat 200 mg 1×/dag
-      </li>
-      <li>
-        <strong>Vitamine B12-tekort</strong>:
-        cyanocobalamine 1 mg 1×/dag
-      </li>
-      <li>
-        <strong>Foliumzuurtekort</strong>:
-        foliumzuur 1 mg 1×/dag
-      </li>
+      <li><strong>IJzergebrek</strong>: ferrofumaraat 200 mg 1×/dag</li>
+      <li><strong>Vitamine B12-tekort</strong>: cyanocobalamine 1 mg 1×/dag</li>
+      <li><strong>Foliumzuurtekort</strong>: foliumzuur 1 mg 1×/dag</li>
     </ul>
-
   </div>
 </div>
 
 <!-- ================= Trombocyten ================= -->
 <div class="test">
-  <div class="test-header" onclick="toggleTest(this.parentElement)">
-    <span>Trombocyten</span>
+  <div class="test-header">
+    <span class="test-name">Trombocyten</span>
     <span class="test-value">Laag of hoog</span>
+    <div class="arrows">
+      <button onclick="openSection(this, 'low')">↓</button>
+      <button onclick="openSection(this, 'high')">↑</button>
+    </div>
   </div>
+  <div class="reference-range">Normaal: 150–400 ×10⁹/L</div>
 
-  <div class="test-content">
-
-    <h4>Functie van trombocyten</h4>
-    <p>
-      Trombocyten zijn essentieel voor de primaire hemostase.
-      Afwijkingen geven risico op bloedingen of trombose.
-    </p>
-
-    <h4>Trombocytopenie (laag)</h4>
+  <div class="test-content low">
+    <h4>Laag (Trombocytopenie)</h4>
     <ul>
       <li>Verminderde productie (beenmerg)</li>
       <li>Verhoogde afbraak (bijv. immuun)</li>
       <li>Redistributie (vergrote milt)</li>
+      <li>Risico: bloedingen &lt; 50 ×10⁹/L</li>
     </ul>
+  </div>
 
-    <h4>Trombocytose (hoog)</h4>
+  <div class="test-content high">
+    <h4>Hoog (Trombocytose)</h4>
     <ul>
       <li>Reactief (infectie, ontsteking, ijzergebrek)</li>
       <li>Primair (myeloproliferatief)</li>
+      <li>Risico: trombose &gt; 1000 ×10⁹/L</li>
     </ul>
-
-    <h4>Wanneer is het gevaarlijk?</h4>
-    <ul>
-      <li>&lt; 50 ×10⁹/L: bloedingsrisico</li>
-      <li>&gt; 1000 ×10⁹/L: tromboserisico</li>
-    </ul>
-
-    <h4>Wat vraag je aanvullend aan?</h4>
-    <ul>
-      <li>Volledig bloedbeeld</li>
-      <li>Vitamine B12 en foliumzuur</li>
-      <li>Ontstekingsparameters</li>
-    </ul>
-
   </div>
 </div>
 
 <!-- ================= Leukocyten ================= -->
 <div class="test">
-  <div class="test-header" onclick="toggleTest(this.parentElement)">
-    <span>Leukocyten</span>
+  <div class="test-header">
+    <span class="test-name">Leukocyten</span>
     <span class="test-value">Afwijkend aantal</span>
+    <div class="arrows">
+      <button onclick="openSection(this, 'low')">↓</button>
+      <button onclick="openSection(this, 'high')">↑</button>
+    </div>
   </div>
+  <div class="reference-range">Normaal: 4–12 ×10⁹/L</div>
 
-  <div class="test-content">
-
-    <h4>Wat zijn leukocyten?</h4>
-    <p>
-      Leukocyten zijn witte bloedcellen en spelen een rol in de afweer.
-      Ze bestaan uit verschillende subtypen met elk een eigen functie.
-    </p>
-
-    <h4>Leukocytose (hoog)</h4>
-    <ul>
-      <li>Vaak bij infectie of stress</li>
-      <li>Kan wijzen op hematologische maligniteit</li>
-    </ul>
-
-    <h4>Leukopenie (laag)</h4>
+  <div class="test-content low">
+    <h4>Laag (Leukopenie)</h4>
     <ul>
       <li>Medicatie (bijv. cytostatica)</li>
       <li>Virale infecties</li>
       <li>Beenmergproblematiek</li>
+      <li>Neutropenie &lt; 0,5 ×10⁹/L → alarm</li>
     </ul>
+  </div>
 
-    <h4>Waarom is differentiatie belangrijk?</h4>
-    <p>
-      Het subtype (neutrofielen, lymfocyten, eosinofielen)
-      bepaalt de waarschijnlijkste oorzaak.
-    </p>
-
-    <h4>Alarmsituaties</h4>
+  <div class="test-content high">
+    <h4>Hoog (Leukocytose)</h4>
     <ul>
-      <li>Neutropenie &lt; 0,5 ×10⁹/L</li>
-      <li>Koorts bij neutropenie</li>
-      <li>Zeer hoge leukocytenwaarden</li>
+      <li>Vaak bij infectie of stress</li>
+      <li>Kan wijzen op hematologische maligniteit</li>
+      <li>Zeer hoge waarden → overleg arts</li>
     </ul>
-
   </div>
 </div>
 
