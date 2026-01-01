@@ -63,3 +63,53 @@ main {
 .test-value {
   font-weight: bold;
 }
+
+/* ===== Test header verfijning ===== */
+.test-header {
+  align-items: center;
+  gap: 10px;
+}
+
+.test-name {
+  font-weight: 600;
+}
+
+.unit {
+  font-size: 0.8em;
+  color: #666;
+}
+
+/* ===== Waarde + pijlen ===== */
+.test-value {
+  font-weight: bold;
+  white-space: nowrap;
+}
+
+.arrows {
+  display: flex;
+  gap: 4px;
+}
+
+.arrows button {
+  border: none;
+  background: transparent;
+  cursor: pointer;
+  font-size: 1em;
+  padding: 2px 4px;
+}
+
+.arrows button:hover {
+  background: #e9ecef;
+  border-radius: 4px;
+}
+
+/* ===== Deelcontent (laag / hoog) ===== */
+/* standaard blijft alles dicht */
+.test-content.low,
+.test-content.high {
+  display: none;
+}
+
+/* als test open is én er geen deel is gekozen */
+.test.ope
+
