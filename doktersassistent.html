@@ -21,28 +21,33 @@
 
 <h1>Doktersassistent – Labuitslagen</h1>
 
+<!-- ===== Side controls ===== -->
 <div class="side-controls">
   <button onclick="scrollToTop()" title="Naar boven">↑</button>
-
-  <button class="toggle-btn active" onclick="setView('compact', this)">
+  <button class="toggle-btn active" onclick="setView(this, 'compact')">
     Korte<br>weergave
   </button>
-
-  <button class="toggle-btn" onclick="setView('expanded', this)">
+  <button class="toggle-btn" onclick="setView(this, 'expanded')">
     Uitgebreide<br>weergave
   </button>
 </div>
 
-
 <!-- ================= Hb ================= -->
 <div class="test">
-  <div class="test-header" onclick="toggleTest(this.parentElement)">
-    <span>Hb</span>
-    <span class="test-value">↓ &lt; 6,0 mmol/L</span>
+  <div class="test-header">
+    <span class="test-name">Hb <span class="unit">(mmol/L)</span></span>
+    <span class="test-value">&lt; 6,0</span>
+    <div class="arrows">
+      <button onclick="openSection(this, 'low')">↓</button>
+      <button onclick="openSection(this, 'high')">↑</button>
+    </div>
   </div>
 
-  <div class="test-content">
+  <div class="reference-range">
+    Normaal: ♂ 8,5–11 | ♀ 7,5–10 mmol/L
+  </div>
 
+  <div class="test-content low">
     <h4>Stap 1 – Wanneer moet de arts er vandaag naar kijken?</h4>
     <ul>
       <li>Hb &lt; 6,0 mmol/L met klachten</li>
@@ -55,13 +60,11 @@
     <ul>
       <li>Hevig menstrueel bloedverlies?</li>
     </ul>
-
     <strong>Kinderen</strong>
     <ul>
       <li>Recent (afgelopen maand) infectie doorgemaakt?</li>
     </ul>
-
-    <strong>Overig (indien bovenstaande niet van toepassing)</strong>
+    <strong>Overig</strong>
     <ul>
       <li>Vegetarisch of veganistisch dieet?</li>
       <li>Recent ziekenhuisopname of ingreep?</li>
@@ -91,25 +94,36 @@
 
     <h4>Stap 4 – Beleid (samengevat)</h4>
     <ul>
-      <li><strong>IJzergebreksanemie</strong>: ferrofumaraat 200 mg 1×/dag</li>
+      <li><strong>IJzergebreksanemie</strong>: ferrofumaraat, oraal, 200 mg eenmaal daags</li>
       <li>Na normalisatie Hb: behandeling 2–3 maanden voortzetten</li>
       <li>Bij menstruatie-gerelateerde oorzaak: overweeg structurele suppletie of anticonceptie</li>
-      <li><strong>Vitamine B12-tekort</strong>: cyanocobalamine 1 mg 1×/dag oraal</li>
-      <li><strong>Foliumzuurtekort</strong>: foliumzuur 1 mg 1×/dag</li>
+      <li><strong>Vitamine B12-tekort</strong>: cyanocobalamine, oraal, 1 mg eenmaal daags</li>
+      <li><strong>Foliumzuurtekort</strong>: foliumzuur, oraal, 1 mg eenmaal daags</li>
     </ul>
+  </div>
 
+  <div class="test-content high">
+    <h4>Verhoogd Hb</h4>
+    <ul>
+      <li>Overweeg dehydratie</li>
+      <li>Bij persisterend verhoogd Hb: overleg arts</li>
+    </ul>
   </div>
 </div>
 
 <!-- ================= Trombocyten ================= -->
 <div class="test">
-  <div class="test-header" onclick="toggleTest(this.parentElement)">
-    <span>Trombocyten</span>
-    <span class="test-value">↓ &lt; 50 ×10⁹/L</span>
+  <div class="test-header">
+    <span class="test-name">Trombocyten</span>
+    <span class="test-value">&lt; 50 ×10⁹/L</span>
+    <div class="arrows">
+      <button onclick="openSection(this, 'low')">↓</button>
+    </div>
   </div>
 
-  <div class="test-content">
+  <div class="reference-range">Normaal: 150–400 ×10⁹/L</div>
 
+  <div class="test-content low">
     <h4>Wanneer spoed?</h4>
     <ul>
       <li>Trombocyten &lt; 50 ×10⁹/L én bloedingsneiging</li>
@@ -128,7 +142,7 @@
       <li>Medicatie: quinidine, goud, cotrimoxazol, LMWH</li>
     </ul>
 
-    <h4>Aanvullend onderzoek (indien arts wenst)</h4>
+    <h4>Aanvullend onderzoek</h4>
     <ul>
       <li>Hb</li>
       <li>MCV</li>
@@ -140,45 +154,35 @@
     </ul>
 
     <h4>Beleid</h4>
-    <p>
-      Bij afwijkende trombocyten zonder bekende oorzaak: overleg arts en
-      vaak verwijzing internist.  
-      Bij bekende stabiele oorzaak: vaak expectatief.
-    </p>
-
+    <p>Bij afwijkende trombocyten zonder bekende oorzaak: overleg arts; bij stabiele oorzaak vaak expectatief.</p>
   </div>
 </div>
 
 <!-- ================= Leukocyten ================= -->
 <div class="test">
-  <div class="test-header" onclick="toggleTest(this.parentElement)">
-    <span>Leukocyten</span>
+  <div class="test-header">
+    <span class="test-name">Leukocyten</span>
     <span class="test-value">↑ &gt; 12 / ↓ &lt; 4 ×10⁹/L</span>
+    <div class="arrows">
+      <button onclick="openSection(this, 'low')">↓</button>
+      <button onclick="openSection(this, 'high')">↑</button>
+    </div>
   </div>
 
-  <div class="test-content">
+  <div class="reference-range">Normaal: 4–12 ×10⁹/L</div>
 
-    <h4>Wanneer spoed?</h4>
+  <div class="test-content low">
+    <h4>Laag</h4>
     <ul>
-      <li>Ernstig ziek beeld</li>
-      <li>Combinatie met andere afwijkende celijnen</li>
+      <li>Persisterend laag → overleg arts</li>
     </ul>
+  </div>
 
-    <h4>Interpretatie</h4>
-    <p>
-      Afwijkingen zijn vaak reactief bij infectie, stress of inflammatie.
-      Persisterende afwijkingen vragen verdere evaluatie.
-    </p>
-
-    <h4>Aanvullend onderzoek</h4>
+  <div class="test-content high">
+    <h4>Hoog</h4>
     <ul>
-      <li>Leukocyten differentiatie</li>
-      <li>CRP</li>
+      <li>Persisterend hoog → overleg arts</li>
     </ul>
-
-    <h4>Beleid</h4>
-    <p>Bij twijfel of persisterende afwijking → overleg arts.</p>
-
   </div>
 </div>
 
