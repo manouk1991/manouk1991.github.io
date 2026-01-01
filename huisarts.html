@@ -21,20 +21,33 @@
 
 <h1>Huisarts – Labuitslagen</h1>
 
-<div class="toggle-bar">
-  <button onclick="closeAll()">Korte weergave</button>
-  <button onclick="openAll()">Uitgebreide weergave</button>
+<!-- ===== Side controls ===== -->
+<div class="side-controls">
+  <button onclick="scrollToTop()" title="Naar boven">↑</button>
+  <button class="toggle-btn active" onclick="setView(this, 'compact')">
+    Korte<br>weergave
+  </button>
+  <button class="toggle-btn" onclick="setView(this, 'expanded')">
+    Uitgebreide<br>weergave
+  </button>
 </div>
 
 <!-- ================= Hb ================= -->
 <div class="test">
-  <div class="test-header" onclick="toggleTest(this.parentElement)">
-    <span>Hb</span>
-    <span class="test-value">↓ &lt; 6,0 mmol/L</span>
+  <div class="test-header">
+    <span class="test-name">Hb <span class="unit">(mmol/L)</span></span>
+    <span class="test-value">&lt; 6,0</span>
+    <div class="arrows">
+      <button onclick="openSection(this, 'low')">↓</button>
+      <button onclick="openSection(this, 'high')">↑</button>
+    </div>
   </div>
 
-  <div class="test-content">
+  <div class="reference-range">
+    Normaal: ♂ 8,5–11 | ♀ 7,5–10
+  </div>
 
+  <div class="test-content low">
     <h4>Stap 1 – Vandaag mogelijk actie nodig</h4>
     <ul>
       <li>Hb &lt; 6,0 mmol/L met klachten</li>
@@ -48,7 +61,6 @@
       <li>Hevig menstrueel bloedverlies</li>
       <li>Recent infectie (met name bij kinderen)</li>
     </ul>
-
     <strong>Algemeen</strong>
     <ul>
       <li>Dieet (vegetarisch/veganistisch)</li>
@@ -74,7 +86,6 @@
       <li>MCV</li>
       <li>Ferritine</li>
     </ul>
-
     <strong>Bij normaal of verhoogd MCV</strong>
     <ul>
       <li>Volledig bloedbeeld</li>
@@ -97,123 +108,77 @@
 
     <h4>Stap 6 – Beleid (1e lijn)</h4>
     <ul>
-      <li>
-        <strong>IJzergebreksanemie</strong>:
-        ferrofumaraat 200 mg 1×/dag
-      </li>
+      <li><strong>IJzergebreksanemie</strong>: ferrofumaraat, oraal, 200 mg 1×/dag</li>
       <li>Na normalisatie Hb: nog 2–3 maanden voortzetten</li>
       <li>Bij mannen en vrouwen ≥50 jaar: overweeg gastro- en/of coloscopie</li>
-      <li>
-        <strong>Vitamine B12-tekort</strong>:
-        cyanocobalamine 1 mg 1×/dag oraal
-      </li>
-      <li>
-        <strong>Foliumzuurtekort</strong>:
-        foliumzuur 1 mg 1×/dag
-      </li>
+      <li><strong>Vitamine B12-tekort</strong>: cyanocobalamine, oraal, 1 mg 1×/dag</li>
+      <li><strong>Foliumzuurtekort</strong>: foliumzuur, oraal, 1 mg 1×/dag</li>
     </ul>
+    <p>Let op: bij actieve ontsteking kan ferritine verhoogd zijn en ijzer verlaagd; interpretatie altijd in klinische context.</p>
+  </div>
 
-    <p>
-      Let op: bij actieve ontsteking kan ferritine verhoogd zijn en ijzer
-      verlaagd; interpretatie altijd in klinische context.
-    </p>
-
+  <div class="test-content high">
+    <h4>Verhoogd Hb</h4>
+    <ul>
+      <li>Overweeg dehydratie</li>
+      <li>Bij persisterend verhoogd Hb: overleg arts</li>
+    </ul>
   </div>
 </div>
 
 <!-- ================= Trombocyten ================= -->
 <div class="test">
-  <div class="test-header" onclick="toggleTest(this.parentElement)">
-    <span>Trombocyten</span>
+  <div class="test-header">
+    <span class="test-name">Trombocyten</span>
     <span class="test-value">↓ &lt; 50 / ↑ &gt; 1000 ×10⁹/L</span>
+    <div class="arrows">
+      <button onclick="openSection(this, 'low')">↓</button>
+      <button onclick="openSection(this, 'high')">↑</button>
+    </div>
   </div>
 
-  <div class="test-content">
+  <div class="reference-range">Normaal: 150–400 ×10⁹/L</div>
 
-    <h4>Stap 1 – Wanneer spoed?</h4>
+  <div class="test-content low">
+    <h4>Laag</h4>
     <ul>
-      <li>Trombocyten &lt; 50 ×10⁹/L met bloedingsverschijnselen</li>
-      <li>Ernstige trombocytopenie ongeacht oorzaak</li>
+      <li>Trombocyten &lt; 50 ×10⁹/L met bloedingen: spoedoverleg internist</li>
     </ul>
+  </div>
 
-    <h4>Stap 2 – Anamnese</h4>
+  <div class="test-content high">
+    <h4>Hoog</h4>
     <ul>
-      <li>Recente infecties</li>
-      <li>Bloedingsneiging (petechiën, hematomen, epistaxis)</li>
-      <li>Familiaire stollingsstoornissen</li>
-      <li>Medicatie (o.a. heparine, NSAID, antibiotica)</li>
+      <li>Trombocyten &gt; 1000 ×10⁹/L: overleg arts / internist</li>
     </ul>
-
-    <h4>Stap 3 – Lichamelijk onderzoek</h4>
-    <ul>
-      <li>Huid en slijmvliezen</li>
-      <li>Lever- en miltgrootte</li>
-      <li>Lymfadenopathie</li>
-    </ul>
-
-    <h4>Stap 4 – Aanvullend onderzoek</h4>
-    <ul>
-      <li>Hb en MCV</li>
-      <li>Leukocyten + differentiatie</li>
-      <li>Vitamine B12 en foliumzuur</li>
-      <li>Nierfunctie</li>
-      <li>TSH</li>
-    </ul>
-
-    <h4>Stap 5 – Beleid</h4>
-    <ul>
-      <li>
-        Bij trombocyten &lt; 50 ×10⁹/L met bloedingen:
-        spoedoverleg internist
-      </li>
-      <li>
-        Bij 100–150 ×10⁹/L zonder klachten:
-        herhaal lab binnen enkele weken
-      </li>
-    </ul>
-
   </div>
 </div>
 
 <!-- ================= Leukocyten ================= -->
 <div class="test">
-  <div class="test-header" onclick="toggleTest(this.parentElement)">
-    <span>Leukocyten</span>
+  <div class="test-header">
+    <span class="test-name">Leukocyten</span>
     <span class="test-value">↑ &gt; 12 / ↓ &lt; 4 ×10⁹/L</span>
+    <div class="arrows">
+      <button onclick="openSection(this, 'low')">↓</button>
+      <button onclick="openSection(this, 'high')">↑</button>
+    </div>
   </div>
 
-  <div class="test-content">
+  <div class="reference-range">Normaal: 4–12 ×10⁹/L</div>
 
-    <h4>Stap 1 – Wanneer direct handelen?</h4>
+  <div class="test-content low">
+    <h4>Laag</h4>
     <ul>
-      <li>Ernstig ziek beeld</li>
-      <li>Leukocyten &gt; 30–50 ×10⁹/L</li>
-      <li>Combinatie met andere cytopenieën</li>
+      <li>Persisterend laag → overleg arts</li>
     </ul>
+  </div>
 
-    <h4>Stap 2 – Anamnese</h4>
+  <div class="test-content high">
+    <h4>Hoog</h4>
     <ul>
-      <li>Infectieverschijnselen</li>
-      <li>Gewichtsverlies, nachtzweten, koorts</li>
-      <li>Medicatiegebruik</li>
-      <li>Roken of alcoholgebruik</li>
+      <li>Persisterend hoog → overleg arts</li>
     </ul>
-
-    <h4>Stap 3 – Aanvullend onderzoek</h4>
-    <ul>
-      <li>Leukocyten differentiatie</li>
-      <li>CRP of BSE</li>
-      <li>Herhaal lab bij twijfel</li>
-    </ul>
-
-    <h4>Stap 4 – Beleid</h4>
-    <p>
-      Bij lichte afwijkingen zonder alarmsymptomen:
-      expectatief of herhaling lab.
-      Bij persisterende of extreme afwijkingen:
-      verwijzing internist/hematoloog.
-    </p>
-
   </div>
 </div>
 
