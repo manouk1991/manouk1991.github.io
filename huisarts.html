@@ -17,168 +17,74 @@
   </nav>
 </header>
 
-<main>
+<div class="side-controls">
+  <button onclick="scrollToTop()">↑</button>
+  <button class="toggle-btn active" onclick="setView('compact', this)">Korte weergave</button>
+  <button class="toggle-btn" onclick="setView('expanded', this)">Uitgebreide weergave</button>
+</div>
 
+<main>
 <h1>Huisarts – Labuitslagen</h1>
 
-<!-- ===== Side controls ===== -->
-<div class="side-controls">
-  <button onclick="scrollToTop()" title="Naar boven">↑</button>
-  <button class="toggle-btn active" onclick="setView(this, 'compact')">
-    Korte<br>weergave
-  </button>
-  <button class="toggle-btn" onclick="setView(this, 'expanded')">
-    Uitgebreide<br>weergave
-  </button>
-</div>
-
-<!-- ================= Hb ================= -->
+<!-- Hb -->
 <div class="test">
-  <div class="test-header">
-    <span class="test-name">Hb <span class="unit">(mmol/L)</span></span>
-    <span class="test-value">&lt; 6,0</span>
-    <div class="arrows">
-      <button onclick="openSection(this, 'low')">↓</button>
-      <button onclick="openSection(this, 'high')">↑</button>
-    </div>
+  <div class="test-header" onclick="toggleTest(this.parentElement)">
+    <span>
+      <span class="test-name">Hb</span>
+      <span class="unit">(mmol/L)</span>
+      <span class="test-value">&lt; 6,0</span>
+    </span>
+    <span class="arrows">
+      <button onclick="openSection(this,'low')">↓</button>
+    </span>
   </div>
-
-  <div class="reference-range">
-    Normaal: ♂ 8,5–11 | ♀ 7,5–10
-  </div>
-
+  <div class="reference-range">Normaal: ♂ 8,5–11 | ♀ 7,5–10</div>
   <div class="test-content low">
-    <h4>Stap 1 – Vandaag mogelijk actie nodig</h4>
-    <ul>
-      <li>Hb &lt; 6,0 mmol/L met klachten</li>
-      <li>Hb &lt; 5,0 mmol/L onafhankelijk van klachten</li>
-      <li>Tekenen van actieve bloeding</li>
-    </ul>
-
-    <h4>Stap 2 – Anamnese</h4>
-    <strong>Specifiek</strong>
-    <ul>
-      <li>Hevig menstrueel bloedverlies</li>
-      <li>Recent infectie (met name bij kinderen)</li>
-    </ul>
-    <strong>Algemeen</strong>
-    <ul>
-      <li>Dieet (vegetarisch/veganistisch)</li>
-      <li>Recente operatie of ziekenhuisopname</li>
-      <li>Verandering defecatiepatroon</li>
-      <li>Buikpijn</li>
-      <li>Onbedoeld gewichtsverlies</li>
-      <li>Melena of hematemesis</li>
-    </ul>
-
-    <h4>Stap 3 – Lichamelijk onderzoek</h4>
-    <ul>
-      <li>Bleekheid, icterus</li>
-      <li>Vergrote lymfeklieren</li>
-      <li>Hepato- of splenomegalie</li>
-      <li>Bij ≥50 jaar met anemie en buikklachten: inspectie, auscultatie en palpatie abdomen</li>
-      <li>Bij buikklachten: rectaal toucher</li>
-    </ul>
-
-    <h4>Stap 4 – Aanvullend onderzoek</h4>
-    <strong>Minimaal</strong>
-    <ul>
-      <li>MCV</li>
-      <li>Ferritine</li>
-    </ul>
-    <strong>Bij normaal of verhoogd MCV</strong>
-    <ul>
-      <li>Volledig bloedbeeld</li>
-      <li>BSE en/of CRP</li>
-      <li>LDH</li>
-      <li>IJzer, transferrine, saturatie</li>
-      <li>Vitamine B12</li>
-      <li>Foliumzuur</li>
-      <li>eGFR en kreatinine</li>
-    </ul>
-
-    <h4>Stap 5 – Differentiaaldiagnose (samengevat)</h4>
-    <ul>
-      <li>IJzergebreksanemie</li>
-      <li>Anemie bij chronische ziekte</li>
-      <li>Vitamine B12- of foliumzuurdeficiëntie</li>
-      <li>Hemoglobineopathie</li>
-      <li>Maligniteit</li>
-    </ul>
-
-    <h4>Stap 6 – Beleid (1e lijn)</h4>
-    <ul>
-      <li><strong>IJzergebreksanemie</strong>: ferrofumaraat, oraal, 200 mg 1×/dag</li>
-      <li>Na normalisatie Hb: nog 2–3 maanden voortzetten</li>
-      <li>Bij mannen en vrouwen ≥50 jaar: overweeg gastro- en/of coloscopie</li>
-      <li><strong>Vitamine B12-tekort</strong>: cyanocobalamine, oraal, 1 mg 1×/dag</li>
-      <li><strong>Foliumzuurtekort</strong>: foliumzuur, oraal, 1 mg 1×/dag</li>
-    </ul>
-    <p>Let op: bij actieve ontsteking kan ferritine verhoogd zijn en ijzer verlaagd; interpretatie altijd in klinische context.</p>
-  </div>
-
-  <div class="test-content high">
-    <h4>Verhoogd Hb</h4>
-    <ul>
-      <li>Overweeg dehydratie</li>
-      <li>Bij persisterend verhoogd Hb: overleg arts</li>
-    </ul>
+    <p>Hb &lt; 6,0 met klachten: actie nodig.</p>
   </div>
 </div>
 
-<!-- ================= Trombocyten ================= -->
+<!-- Trombocyten -->
 <div class="test">
-  <div class="test-header">
-    <span class="test-name">Trombocyten</span>
-    <span class="test-value">↓ &lt; 50 / ↑ &gt; 1000 ×10⁹/L</span>
-    <div class="arrows">
-      <button onclick="openSection(this, 'low')">↓</button>
-      <button onclick="openSection(this, 'high')">↑</button>
-    </div>
+  <div class="test-header" onclick="toggleTest(this.parentElement)">
+    <span>
+      <span class="test-name">Trombocyten</span>
+      <span class="unit">(×10⁹/L)</span>
+      <span class="test-value">&lt; 50 / &gt; 1000</span>
+    </span>
+    <span class="arrows">
+      <button onclick="openSection(this,'low')">↓</button>
+      <button onclick="openSection(this,'high')">↑</button>
+    </span>
   </div>
-
-  <div class="reference-range">Normaal: 150–400 ×10⁹/L</div>
-
+  <div class="reference-range">Normaal: 150–400</div>
   <div class="test-content low">
-    <h4>Laag</h4>
-    <ul>
-      <li>Trombocyten &lt; 50 ×10⁹/L met bloedingen: spoedoverleg internist</li>
-    </ul>
+    <p>Laag: bloedingsrisico, contact arts.</p>
   </div>
-
   <div class="test-content high">
-    <h4>Hoog</h4>
-    <ul>
-      <li>Trombocyten &gt; 1000 ×10⁹/L: overleg arts / internist</li>
-    </ul>
+    <p>Hoog: tromboserisico, verder onderzoek.</p>
   </div>
 </div>
 
-<!-- ================= Leukocyten ================= -->
+<!-- Leukocyten -->
 <div class="test">
-  <div class="test-header">
-    <span class="test-name">Leukocyten</span>
-    <span class="test-value">↑ &gt; 12 / ↓ &lt; 4 ×10⁹/L</span>
-    <div class="arrows">
-      <button onclick="openSection(this, 'low')">↓</button>
-      <button onclick="openSection(this, 'high')">↑</button>
-    </div>
+  <div class="test-header" onclick="toggleTest(this.parentElement)">
+    <span>
+      <span class="test-name">Leukocyten</span>
+      <span class="unit">(×10⁹/L)</span>
+      <span class="test-value">&lt; 4 / &gt; 12</span>
+    </span>
+    <span class="arrows">
+      <button onclick="openSection(this,'low')">↓</button>
+      <button onclick="openSection(this,'high')">↑</button>
+    </span>
   </div>
-
-  <div class="reference-range">Normaal: 4–12 ×10⁹/L</div>
-
+  <div class="reference-range">Normaal: 4–12</div>
   <div class="test-content low">
-    <h4>Laag</h4>
-    <ul>
-      <li>Persisterend laag → overleg arts</li>
-    </ul>
+    <p>Laag: neutropenie, infectie of medicatie oorzaak.</p>
   </div>
-
   <div class="test-content high">
-    <h4>Hoog</h4>
-    <ul>
-      <li>Persisterend hoog → overleg arts</li>
-    </ul>
+    <p>Hoog: infectie, inflammatie of stress.</p>
   </div>
 </div>
 
