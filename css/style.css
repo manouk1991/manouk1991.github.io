@@ -47,26 +47,8 @@ main {
   padding: 12px;
   display: flex;
   justify-content: space-between;
-  cursor: pointer;
-}
-
-.test-content {
-  display: none;
-  padding: 12px;
-  border-top: 1px solid #ddd;
-}
-
-.test.open .test-content {
-  display: block;
-}
-
-.test-value {
-  font-weight: bold;
-}
-
-/* ===== Test header verfijning ===== */
-.test-header {
   align-items: center;
+  cursor: pointer;
   gap: 10px;
 }
 
@@ -79,7 +61,6 @@ main {
   color: #666;
 }
 
-/* ===== Waarde + pijlen ===== */
 .test-value {
   font-weight: bold;
   white-space: nowrap;
@@ -103,13 +84,64 @@ main {
   border-radius: 4px;
 }
 
-/* ===== Deelcontent (laag / hoog) ===== */
-/* standaard blijft alles dicht */
+/* Deelcontent (laag / hoog) */
 .test-content.low,
 .test-content.high {
   display: none;
 }
 
-/* als test open is én er geen deel is gekozen */
-.test.ope
+/* Als test open is */
+.test.open .test-content {
+  display: block;
+}
 
+/* ===== Side-controls links ===== */
+.side-controls {
+  position: fixed;       /* blijft meescrollen */
+  top: 120px;            /* afstand van top header */
+  left: 20px;            /* afstand van linkerzijde */
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  z-index: 1000;
+}
+
+.side-controls button {
+  padding: 10px;
+  font-size: 14px;
+  border-radius: 6px;
+  border: none;
+  background-color: #0b5ed7;
+  color: white;
+  cursor: pointer;
+  width: 130px;
+  text-align: center;
+}
+
+.side-controls button.active {
+  background-color: #ffc107;
+  color: black;
+}
+
+/* Reference range */
+.reference-range {
+  font-size: 0.85em;
+  color: #555;
+  padding: 0 12px 12px 12px;
+}
+
+/* Responsive kleine schermen */
+@media (max-width: 800px) {
+  .side-controls {
+    position: static;
+    flex-direction: row;
+    justify-content: center;
+    margin-bottom: 20px;
+    top: auto;
+    left: auto;
+  }
+
+  .side-controls button {
+    width: auto;
+  }
+}
