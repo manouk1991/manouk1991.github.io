@@ -30,45 +30,142 @@
 </aside>
 
 <main>
-    <p class="instruction">
-        Je ziet links de betreffende labwaarde, met de pijltjes kun je navigeren naar de situatie van toepassing.
-    </p>
+<p class="instruction">
+Je ziet links de betreffende labwaarde, met de pijltjes kun je navigeren naar de situatie van toepassing.
+</p>
 
-    <!-- TEST BLOK -->
-    <section class="test">
-        <div class="test-header">
-            <span class="test-name">Hb (mmol/L)</span>
-            <span class="test-value">&lt; 6,0</span>
-            <button class="toggle" onclick="toggleTest(this)">▼</button>
-        </div>
+<!-- Hb -->
+<section class="test">
+<div class="test-header">
+<span class="test-name">Hb (mmol/L)</span>
+<span class="test-value">&lt; 6,0</span>
+<button class="toggle" onclick="toggleTest(this)">▼</button>
+</div>
 
-        <div class="test-content">
-            <h4>Wanneer vandaag actie nodig</h4>
-            <p>Bij alarmsymptomen of vermoeden van acute bloeding.</p>
+<div class="test-content">
+<h4>Wanneer vandaag actie nodig</h4>
+<p>Bij klachten passend bij anemie of aanwijzingen voor actieve bloeding.</p>
 
-            <h4>Vragen</h4>
-            <ul>
-                <li>Hevig menstrueel bloedverlies</li>
-                <li>Recent gewichtsverlies</li>
-                <li>Veranderd ontlastingspatroon</li>
-            </ul>
+<h4>Vragen</h4>
+<ul>
+<li>Hevig menstrueel bloedverlies</li>
+<li>Recente infectie (bij kinderen)</li>
+<li>Buikpijn, gewichtsverlies</li>
+<li>Zwarte of bloederige ontlasting</li>
+</ul>
 
-            <h4>Aanvullend onderzoek</h4>
-            <ul>
-                <li>MCV</li>
-                <li>Ferritine</li>
-                <li>Volledig bloedbeeld</li>
-            </ul>
+<h4>Aanvullend onderzoek</h4>
+<ul>
+<li>MCV</li>
+<li>Ferritine</li>
+</ul>
 
-            <h4>Beleid</h4>
-            <p>
-                Bij ijzergebrek: ferrofumaraat 200 mg 1× daags.
-                Na normalisatie Hb nog 2–3 maanden voortzetten.
-            </p>
-        </div>
-    </section>
+<h4>Beleid</h4>
+<p>
+Bij vermoeden ijzergebrek: start orale ijzersuppletie
+(ferrofumaraat 200 mg 1× daags). Overleg bij alarmsymptomen direct met arts.
+</p>
+</div>
+</section>
+
+<!-- Trombocyten -->
+<section class="test">
+<div class="test-header">
+<span class="test-name">Trombocyten</span>
+<span class="test-value">&lt; 50 ×10⁹/L</span>
+<button class="toggle" onclick="toggleTest(this)">▼</button>
+</div>
+
+<div class="test-content">
+<h4>Wanneer vandaag actie nodig</h4>
+<p>Bij bloedingsneiging of zeer lage waarden.</p>
+
+<h4>Vragen</h4>
+<ul>
+<li>Recente infectie</li>
+<li>Neusbloedingen of blauwe plekken</li>
+<li>Medicatiegebruik (antistolling)</li>
+</ul>
+
+<h4>Aanvullend onderzoek</h4>
+<ul>
+<li>Hb</li>
+<li>Leukocyten</li>
+<li>Vitamine B12</li>
+<li>Foliumzuur</li>
+</ul>
+
+<h4>Beleid</h4>
+<p>
+Bij bloedingsklachten of sterk verlaagde waarde:
+zelfde dag overleg met arts.
+</p>
+</div>
+</section>
+
+<!-- CRP -->
+<section class="test">
+<div class="test-header">
+<span class="test-name">CRP (mg/L)</span>
+<span class="test-value">&gt; 100</span>
+<button class="toggle" onclick="toggleTest(this)">▼</button>
+</div>
+
+<div class="test-content">
+<h4>Interpretatie</h4>
+<ul>
+<li>&lt; 20: vaak viraal</li>
+<li>20–100: mogelijk bacterieel</li>
+<li>&gt; 100: ernstige infectie waarschijnlijk</li>
+</ul>
+
+<h4>Beleid</h4>
+<p>
+Bij hoge waarden altijd overleg met arts,
+zeker bij klinisch zieke patiënt.
+</p>
+</div>
+</section>
+
+<!-- Natrium -->
+<section class="test">
+<div class="test-header">
+<span class="test-name">Natrium (mmol/L)</span>
+<span class="test-value">&lt; 128 / &gt; 148</span>
+<button class="toggle" onclick="toggleTest(this)">▼</button>
+</div>
+
+<div class="test-content">
+<h4>Wanneer actie nodig</h4>
+<p>Bij neurologische symptomen of sterke afwijkingen.</p>
+
+<h4>Beleid</h4>
+<p>
+Bij ernstige afwijkingen of symptomen:
+zelfde dag overleg met arts.
+</p>
+</div>
+</section>
+
+<!-- Glucose -->
+<section class="test">
+<div class="test-header">
+<span class="test-name">Glucose (mmol/L)</span>
+<span class="test-value">&lt; 3,5 / &gt; 15</span>
+<button class="toggle" onclick="toggleTest(this)">▼</button>
+</div>
+
+<div class="test-content">
+<h4>Beleid</h4>
+<ul>
+<li>15–25 zonder ziekte: extra drinken</li>
+<li>&gt; 25 of ziek: arts inschakelen</li>
+</ul>
+</div>
+</section>
 
 </main>
+
 
 <footer>
     © 2026 – Educatief hulpmiddel, geen vervanging van klinisch oordeel
