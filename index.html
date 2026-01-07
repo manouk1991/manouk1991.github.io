@@ -1,26 +1,228 @@
 <!DOCTYPE html>
 <html lang="nl">
 <head>
-    <meta charset="UTF-8">
-    <title>Labwijzer</title>
-    <link rel="stylesheet" href="css/style.css">
+<meta charset="UTF-8">
+<title>Labuitslagen – Klinische ondersteuning</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<style>
+body{margin:0;font-family:Arial,sans-serif;background:#f4f6f9}
+header{background:#1f3c88;padding:10px}
+nav{display:flex;gap:10px;justify-content:center}
+nav button{border:none;padding:10px 14px;border-radius:6px;cursor:pointer;background:#ffffff33;color:#fff}
+nav button.active{background:#ffcc00;color:#000;font-weight:bold}
+main{max-width:1000px;margin:auto;padding:20px}
+.description{font-style:italic;margin-bottom:15px}
+
+.view-toggle button{margin-right:8px;padding:8px 12px;cursor:pointer}
+
+.test{background:#fff;border:1px solid #ddd;border-radius:8px;margin-bottom:10px}
+.test-header{display:flex;justify-content:space-between;padding:12px;background:#eef2f7;cursor:pointer}
+.test-header strong{font-size:16px}
+.test-content{display:none;padding:12px}
+.test.open .test-content{display:block}
+
+.floating{position:fixed;left:10px;bottom:20px}
+.floating button{border:none;border-radius:50%;padding:10px;background:#1f3c88;color:white;cursor:pointer}
+</style>
 </head>
+
 <body>
 
-<nav class="menu">
-    <a href="doktersassistent.html">Doktersassistent</a>
-    <a href="huisarts.html">Huisarts</a>
-    <a href="specialist.html">Specialist</a>
-    <a href="student.html">Student</a>
+<header>
+<nav>
+<button id="btn-assistant" onclick="showSection('assistant')">Doktersassistent</button>
+<button id="btn-huisarts" onclick="showSection('huisarts')">Huisarts</button>
+<button id="btn-specialist" onclick="showSection('specialist')">Specialist</button>
+<button id="btn-student" onclick="showSection('student')">Student</button>
 </nav>
+</header>
 
-<main class="center">
-    <h2>Kies een profiel</h2>
+<main>
+<div class="view-toggle">
+<button onclick="collapseAll()">Korte weergave</button>
+<button onclick="expandAll()">Uitgebreide weergave</button>
+</div>
+
+<p class="description">
+Je ziet links de labtest. Met het pijltje open of sluit je de bijbehorende klinische informatie.
+</p>
+
+<section id="assistant"></section>
+<section id="huisarts" style="display:none"></section>
+<section id="specialist" style="display:none"></section>
+<section id="student" style="display:none"></section>
 </main>
 
-<footer>
-    © 2026 – Educatief hulpmiddel
-</footer>
+<div class="floating">
+<button onclick="window.scrollTo({top:0,behavior:'smooth'})">↑</button>
+</div>
+
+<script>
+/* =====================
+   DATA (copyright-proof)
+===================== */
+const tests = {
+assistant: [
+{
+name: "Hb (mmol/L)",
+value: "< 6,0 ↓",
+content: `
+<h4>Wanneer overleggen</h4>
+<ul>
+<li>Ernstige klachten (duizeligheid, dyspneu, collaps)</li>
+<li>Tekenen van actieve bloeding</li>
+</ul>
+<h4>Vragen</h4>
+<ul>
+<li>Hevig menstrueel bloedverlies?</li>
+<li>Recente infectie?</li>
+<li>Donkere ontlasting of zichtbaar bloed?</li>
+</ul>
+<h4>Aanvullend</h4>
+<ul>
+<li>MCV</li>
+<li>Ferritine</li>
+</ul>
+<h4>Eerste beleid</h4>
+<p>Bij vermoeden ijzertekort: orale ijzersuppletie conform lokale afspraken.</p>
+`
+},
+{
+name: "Trombocyten (x10⁹/L)",
+value: "< 50 ↓",
+content: `
+<h4>Let op</h4>
+<ul>
+<li>Bloedingsneiging</li>
+<li>Recente infectie of medicatie</li>
+</ul>
+<p>Bij klachten of zeer lage waarde: overleg arts.</p>
+`
+}
+],
+
+huisarts: [
+{
+name: "Trombocyten (x10⁹/L)",
+value: "< 50 ↓",
+content: `
+<h4>Anamnese</h4>
+<ul>
+<li>Bloedingen, petechiën, hematomen</li>
+<li>Medicatie (antistolling, NSAID)</li>
+</ul>
+<h4>Differentiaal</h4>
+<ul>
+<li>Immuungemedieerd</li>
+<li>Infectieus</li>
+<li>Medicatie-gerelateerd</li>
+</ul>
+<h4>Beleid</h4>
+<p>Bij bloedingsneiging of &lt;50: overleg internist.</p>
+`
+},
+{
+name: "CRP (mg/L)",
+value: "> 100 ↑",
+content: `
+<h4>Interpretatie</h4>
+<p>Past vaak bij bacteriële infectie of ernstige inflammatie.</p>
+<h4>Beleid</h4>
+<p>Altijd beoordelen in klinische context.</p>
+`
+}
+],
+
+specialist: [
+{
+name: "Neutrofielen (x10⁹/L)",
+value: "< 0,5 ↓",
+content: `
+<h4>Risico</h4>
+<p>Ernstige infectierisico, vooral bij koorts.</p>
+<h4>Diagnostiek</h4>
+<ul>
+<li>Volledig bloedbeeld</li>
+<li>Kweken bij koorts</li>
+</ul>
+<h4>Beleid</h4>
+<p>Empirische antimicrobiële therapie bij febriele neutropenie.</p>
+`
+},
+{
+name: "eGFR (ml/min/1,73m²)",
+value: "< 30 ↓",
+content: `
+<h4>Betekenis</h4>
+<p>Ernstig verminderde nierfunctie.</p>
+<h4>Actie</h4>
+<p>Doseringsaanpassing medicatie en overleg specialist.</p>
+`
+}
+],
+
+student: [
+{
+name: "CRP (mg/L)",
+value: "↑",
+content: `
+<h4>Leerpunt</h4>
+<p>CRP is een acute-fase eiwit en aspecifiek.</p>
+<p>Niet geschikt als enige beslisparameter.</p>
+`
+},
+{
+name: "Ferritine",
+value: "↓ / ↑",
+content: `
+<h4>Uitleg</h4>
+<p>Laag: ijzertekort. Hoog: kan passen bij ontsteking.</p>
+`
+}
+]
+};
+
+/* =====================
+   RENDERING
+===================== */
+function render(section) {
+const el = document.getElementById(section);
+el.innerHTML = "";
+tests[section].forEach(t => {
+el.innerHTML += `
+<div class="test">
+<div class="test-header" onclick="this.parentElement.classList.toggle('open')">
+<strong>${t.name}</strong>
+<span>${t.value}</span>
+</div>
+<div class="test-content">${t.content}</div>
+</div>`;
+});
+}
+
+/* =====================
+   NAVIGATIE
+===================== */
+function showSection(id){
+document.querySelectorAll("section").forEach(s=>s.style.display="none");
+document.getElementById(id).style.display="block";
+document.querySelectorAll("nav button").forEach(b=>b.classList.remove("active"));
+document.getElementById("btn-"+id).classList.add("active");
+}
+
+/* =====================
+   WEERGAVE
+===================== */
+function expandAll(){document.querySelectorAll(".test").forEach(t=>t.classList.add("open"))}
+function collapseAll(){document.querySelectorAll(".test").forEach(t=>t.classList.remove("open"))}
+
+/* =====================
+   INIT
+===================== */
+["assistant","huisarts","specialist","student"].forEach(render);
+showSection("assistant");
+</script>
 
 </body>
 </html>
