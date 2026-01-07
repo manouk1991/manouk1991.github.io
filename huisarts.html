@@ -30,10 +30,271 @@
 </aside>
 
 <main>
-    <p class="instruction">
-        Je ziet links de betreffende labwaarde, met de pijltjes kun je navigeren naar de situatie van toepassing.
-    </p>
+<p class="instruction">
+Je ziet links de betreffende labwaarde, met de pijltjes kun je navigeren naar de situatie van toepassing.
+</p>
+
+<!-- Hb -->
+<section class="test">
+<div class="test-header">
+<span class="test-name">Hb (mmol/L)</span>
+<span class="test-value">&lt; 6,0 / &gt; 10,0</span>
+<button class="toggle" onclick="toggleTest(this)">▼</button>
+</div>
+
+<div class="test-content">
+<h4>Interpretatie</h4>
+<p>
+Afwijkend Hb kan wijzen op anemie of polycytemie.
+Beoordeel altijd in combinatie met MCV, ferritine en kliniek.
+</p>
+
+<h4>Differentiaaldiagnose</h4>
+<ul>
+<li>Ijzergebrek</li>
+<li>Chronische ziekte</li>
+<li>Vitamine B12- of foliumzuurtekort</li>
+<li>Hemolyse</li>
+</ul>
+
+<h4>Beleid</h4>
+<p>
+Aanvullend labonderzoek en oorzaakanalyse.
+Verwijs bij alarmsymptomen of onduidelijke oorzaak.
+</p>
+</div>
+</section>
+
+<!-- Trombocyten -->
+<section class="test">
+<div class="test-header">
+<span class="test-name">Trombocyten</span>
+<span class="test-value">&lt; 100 of &gt; 450</span>
+<button class="toggle" onclick="toggleTest(this)">▼</button>
+</div>
+
+<div class="test-content">
+<h4>Interpretatie</h4>
+<p>
+Afwijkingen kunnen reactief zijn of passen bij beenmergaandoeningen.
+</p>
+
+<h4>Differentiaaldiagnose</h4>
+<ul>
+<li>Infectie</li>
+<li>Medicatie</li>
+<li>Auto-immuunziekte</li>
+<li>Hematologische aandoening</li>
+</ul>
+
+<h4>Beleid</h4>
+<p>
+Herhaal lab bij twijfel.
+Verwijs bij ernstige afwijkingen of bloedingsklachten.
+</p>
+</div>
+</section>
+
+<!-- Leukocyten -->
+<section class="test">
+<div class="test-header">
+<span class="test-name">Leukocyten</span>
+<span class="test-value">&lt; 3 of &gt; 15</span>
+<button class="toggle" onclick="toggleTest(this)">▼</button>
+</div>
+
+<div class="test-content">
+<h4>Interpretatie</h4>
+<p>
+Kan passen bij infectie, inflammatie of hematologische aandoening.
+</p>
+
+<h4>Beleid</h4>
+<p>
+Beoordeel differentieel en herhaal bij twijfel.
+</p>
+</div>
+</section>
+
+<!-- CRP -->
+<section class="test">
+<div class="test-header">
+<span class="test-name">CRP (mg/L)</span>
+<span class="test-value">&gt; 100</span>
+<button class="toggle" onclick="toggleTest(this)">▼</button>
+</div>
+
+<div class="test-content">
+<h4>Interpretatie</h4>
+<p>
+Sterk verhoogd CRP past bij ernstige bacteriële infectie
+of uitgebreide ontsteking.
+</p>
+
+<h4>Beleid</h4>
+<p>
+Altijd klinisch beoordelen.
+Overweeg verwijzing bij zieke patiënt.
+</p>
+</div>
+</section>
+
+<!-- Natrium -->
+<section class="test">
+<div class="test-header">
+<span class="test-name">Natrium (mmol/L)</span>
+<span class="test-value">&lt; 130 of &gt; 150</span>
+<button class="toggle" onclick="toggleTest(this)">▼</button>
+</div>
+
+<div class="test-content">
+<h4>Interpretatie</h4>
+<p>
+Afwijkingen kunnen neurologische symptomen geven,
+voorzichtig corrigeren.
+</p>
+
+<h4>Beleid</h4>
+<p>
+Behandel onderliggende oorzaak.
+Verwijs bij ernstige of symptomatische afwijkingen.
+</p>
+</div>
+</section>
+
+<!-- Kalium -->
+<section class="test">
+<div class="test-header">
+<span class="test-name">Kalium (mmol/L)</span>
+<span class="test-value">&lt; 3,0 of &gt; 5,5</span>
+<button class="toggle" onclick="toggleTest(this)">▼</button>
+</div>
+
+<div class="test-content">
+<h4>Interpretatie</h4>
+<p>
+Afwijkingen verhogen risico op hartritmestoornissen.
+</p>
+
+<h4>Beleid</h4>
+<p>
+Herhaal bepaling, beoordeel medicatie en nierfunctie.
+Spoedverwijzing bij ernstige afwijkingen.
+</p>
+</div>
+</section>
+
+<!-- eGFR -->
+<section class="test">
+<div class="test-header">
+<span class="test-name">eGFR</span>
+<span class="test-value">&lt; 60</span>
+<button class="toggle" onclick="toggleTest(this)">▼</button>
+</div>
+
+<div class="test-content">
+<h4>Interpretatie</h4>
+<p>
+Chronische nierschade bij aanhoudende afwijking &gt; 3 maanden.
+</p>
+
+<h4>Beleid</h4>
+<p>
+Controleer albuminurie en bloeddruk.
+Verwijs bij snelle achteruitgang.
+</p>
+</div>
+</section>
+
+<!-- Glucose -->
+<section class="test">
+<div class="test-header">
+<span class="test-name">Glucose (mmol/L)</span>
+<span class="test-value">&gt; 11,0</span>
+<button class="toggle" onclick="toggleTest(this)">▼</button>
+</div>
+
+<div class="test-content">
+<h4>Interpretatie</h4>
+<p>
+Verhoogde glucose kan wijzen op diabetes mellitus.
+</p>
+
+<h4>Beleid</h4>
+<p>
+Bevestig met herhaalde meting of HbA1c.
+Start leefstijlinterventie en medicatie indien nodig.
+</p>
+</div>
+</section>
+
+<!-- ALAT -->
+<section class="test">
+<div class="test-header">
+<span class="test-name">ALAT</span>
+<span class="test-value">&gt; 3× normaal</span>
+<button class="toggle" onclick="toggleTest(this)">▼</button>
+</div>
+
+<div class="test-content">
+<h4>Interpretatie</h4>
+<p>
+Past bij levercelbeschadiging.
+</p>
+
+<h4>Beleid</h4>
+<p>
+Herhaal en bepaal aanvullende leverwaarden.
+Verwijs bij persisterende stijging.
+</p>
+</div>
+</section>
+
+<!-- TSH -->
+<section class="test">
+<div class="test-header">
+<span class="test-name">TSH</span>
+<span class="test-value">Afwijkend</span>
+<button class="toggle" onclick="toggleTest(this)">▼</button>
+</div>
+
+<div class="test-content">
+<h4>Interpretatie</h4>
+<p>
+Afwijking wijst op hypo- of hyperthyreoïdie.
+</p>
+
+<h4>Beleid</h4>
+<p>
+Bepaal FT4, beoordeel klachten en behandel indien nodig.
+</p>
+</div>
+</section>
+
+<!-- Ferritine -->
+<section class="test">
+<div class="test-header">
+<span class="test-name">Ferritine</span>
+<span class="test-value">&lt; 30</span>
+<button class="toggle" onclick="toggleTest(this)">▼</button>
+</div>
+
+<div class="test-content">
+<h4>Interpretatie</h4>
+<p>
+Laag ferritine bevestigt ijzergebrek.
+</p>
+
+<h4>Beleid</h4>
+<p>
+Zoek oorzaak van ijzerverlies.
+Start ijzersuppletie en controleer effect.
+</p>
+</div>
+</section>
+
 </main>
+
 
 <footer>
     © 2026 – Educatief hulpmiddel
